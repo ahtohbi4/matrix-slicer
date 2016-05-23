@@ -1,7 +1,7 @@
 matrix-slicer
 ==
 
-[![npm version][version-img]][version] [![Dependency Status][dependency-img]][dependency] [![Travis Build Status][travis-img]][travis] [![Appveyor Build Status][appveyor-img]][appveyor] [![Codacy Badge][codacy-img]][codacy]
+[![npm version][version-img]][version] [![Dependency Status][dependency-img]][dependency] [![Travis Build Status][travis-img]][travis] [![Appveyor Build Status][appveyor-img]][appveyor]
 
 [dependency-img]: https://david-dm.org/ahtohbi4/matrix-slicer.svg
 [dependency]: https://david-dm.org/ahtohbi4/matrix-slicer
