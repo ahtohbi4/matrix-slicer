@@ -1,9 +1,9 @@
 matrix-slicer
 ==
 
-[![npm version][version-img]][version] [![Dependency Status][dependency-img]][dependency] [![Travis Build Status][travis-img]][travis] [![Appveyor Build Status][appveyor-img]][appveyor]
+[![npm version][version-img]][version] [![devDependency Status][dependency-img]][dependency] [![Travis Build Status][travis-img]][travis] [![Appveyor Build Status][appveyor-img]][appveyor]
 
-[dependency-img]: https://david-dm.org/ahtohbi4/matrix-slicer.svg
+[dependency-img]: https://david-dm.org/ahtohbi4/matrix-slicer/dev-status.svg
 [dependency]: https://david-dm.org/ahtohbi4/matrix-slicer#info=devDependencies
 [version-img]: https://badge.fury.io/js/matrix-slicer.svg
 [version]: https://badge.fury.io/js/matrix-slicer
