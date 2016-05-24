@@ -138,4 +138,55 @@ describe('Get matrix items:', () => {
             expect(m.getColumns(1, -2)).to.eql([[2, 6], [3, 7]]);
         });
     });
+
+    // Single major diagonal by index
+    describe('getDiagonalMaj(number)', () => {
+        const m = new Matrix([
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ]);
+
+        it('getDiagonalMaj() throws exception', () => {
+            expect(() => {
+                m.getDiagonalMaj();
+            }).to.throw(/is not correct diagonals index/i);
+        });
+
+        it('getDiagonalMaj(6) throws exception', () => {
+            expect(() => {
+                m.getDiagonalMaj(6);
+            }).to.throw(/Could not get "6" diagonal from the matrix/i);
+        });
+
+        it('getDiagonalMaj(1) returns diagonal with index 1 (zero-based)', () => {
+            expect(m.getDiagonalMaj(1)).to.eql([3, 6]);
+        });
+    });
+
+    // Major diagonals by indices range
+    describe('getDiagonalsMaj(begin[, end])', () => {
+        const m = new Matrix([
+            [1, 2],
+            [3, 4],
+            [5, 6],
+            [7, 8]
+        ]);
+
+        it('getDiagonalsMaj(2) returns diagonals beginning from index 2 (zero-based) to the last one', () => {
+            expect(m.getDiagonalsMaj(2)).to.eql([[3, 6], [1, 4], [2]]);
+        });
+
+        it('getDiagonalsMaj(-3) returns diagonals beginning from index=(<diagonals amount> + begin) to the last one', () => {
+            expect(m.getDiagonalsMaj(-3)).to.eql([[3, 6], [1, 4], [2]]);
+        });
+
+        it('getDiagonalsMaj(1, 2) returns diagonals beginning from index 1 to index 2 (zero-based)', () => {
+            expect(m.getDiagonalsMaj(1, 2)).to.eql([[5, 8], [3, 6]]);
+        });
+
+        it('getDiagonalsMaj(1, -2) returns diagonals beginning from index 1 (zero-based) to index=(<diagonals amount> + end)', () => {
+            expect(m.getDiagonalsMaj(1, -2)).to.eql([[5, 8], [3, 6], [1, 4]]);
+        });
+    });
 });
