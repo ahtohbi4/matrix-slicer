@@ -48,16 +48,8 @@ describe('Get matrix items:', () => {
             [3, 4]
         ]);
 
-        it('getRow() throws exception', () => {
-            expect(() => {
-                m.getRow();
-            }).to.throw(/is not correct rows index/i);
-        });
-
-        it('getRow(6) throws exception', () => {
-            expect(() => {
-                m.getRow(6);
-            }).to.throw(/Could not get "6" row from the matrix/i);
+        it('getRow(6) returns undefined', () => {
+            expect(m.getRow(6)).to.equal(undefined);
         });
 
         it('getRow(1) returns row with index 1 (zero-based)', () => {
@@ -98,16 +90,8 @@ describe('Get matrix items:', () => {
             [3, 4]
         ]);
 
-        it('getColumn() throws exception', () => {
-            expect(() => {
-                m.getColumn();
-            }).to.throw(/is not correct columns index/i);
-        });
-
-        it('getColumn(6) throws exception', () => {
-            expect(() => {
-                m.getColumn(6);
-            }).to.throw(/Could not get "6" column from the matrix/i);
+        it('getColumn(6) returns undefined', () => {
+            expect(m.getColumn(6)).to.equal(undefined);
         });
 
         it('getColumn(1) returns column with index 1 (zero-based)', () => {
@@ -147,16 +131,8 @@ describe('Get matrix items:', () => {
             [5, 6]
         ]);
 
-        it('getDiagonalMaj() throws exception', () => {
-            expect(() => {
-                m.getDiagonalMaj();
-            }).to.throw(/is not correct diagonals index/i);
-        });
-
-        it('getDiagonalMaj(6) throws exception', () => {
-            expect(() => {
-                m.getDiagonalMaj(6);
-            }).to.throw(/Could not get "6" diagonal from the matrix/i);
+        it('getDiagonalMaj(6) returns undefined', () => {
+            expect(m.getDiagonalMaj(6)).to.equal(undefined);
         });
 
         it('getDiagonalMaj(1) returns major diagonal with index 1 (zero-based)', () => {
@@ -198,16 +174,8 @@ describe('Get matrix items:', () => {
             [5, 6]
         ]);
 
-        it('getDiagonalMin() throws exception', () => {
-            expect(() => {
-                m.getDiagonalMin();
-            }).to.throw(/is not correct diagonals index/i);
-        });
-
-        it('getDiagonalMin(6) throws exception', () => {
-            expect(() => {
-                m.getDiagonalMin(6);
-            }).to.throw(/Could not get "6" diagonal from the matrix/i);
+        it('getDiagonalMin(6) returns undefined', () => {
+            expect(m.getDiagonalMin(6)).to.equal(undefined);
         });
 
         it('getDiagonalMin(1) returns minor diagonal with index 1 (zero-based)', () => {
