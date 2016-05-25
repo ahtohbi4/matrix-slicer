@@ -41,9 +41,10 @@ class Matrix {
         end = end || this.height - 1;
         end = (end >= 0) ? end : this.height + end;
 
-        result = this.matrix.filter((row, i) => {
-            return (begin <= i && i <= end);
-        });
+        for (let i = begin; i <= end; i++) {
+            result = result || [];
+            result.push(this.getRow(i));
+        }
 
         return result;
     }
@@ -79,12 +80,8 @@ class Matrix {
         end = (end >= 0) ? end : this.width + end;
 
         for (let i = begin; i <= end; i++) {
-            let column = this.matrix.map((row) => {
-                return row[i];
-            });
-
             result = result || [];
-            result.push(column);
+            result.push(this.getColumn(i));
         }
 
         return result;
