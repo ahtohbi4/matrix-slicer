@@ -61,6 +61,32 @@ class Matrix {
 
         return result;
     }
+
+    /**
+     * @param {number} [begin=0]
+     * @param {number} [end=<columns amount>]
+     * @returns {array}
+     */
+    getColumns(begin, end) {
+        let result;
+
+        begin = begin || 0;
+        begin = (begin >= 0) ? begin : this.matrix[0].length + begin;
+
+        end = end || this.matrix[0].length - 1;
+        end = (end >= 0) ? end : this.matrix[0].length + end;
+
+        for (let i = begin; i <= end; i++) {
+            let column = this.matrix.map((row) => {
+                return row[i];
+            });
+
+            result = result || [];
+            result.push(column);
+        }
+
+        return result;
+    }
 }
 
 module.exports = Matrix;
