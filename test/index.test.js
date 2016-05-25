@@ -126,17 +126,21 @@ describe('Get matrix items:', () => {
     // Single major diagonal by index
     describe('getDiagonalMaj(number)', () => {
         const m = new Matrix([
-            [1, 2],
-            [3, 4],
-            [5, 6]
+            [1,  2,  3,  4],
+            [5,  6,  7,  8],
+            [9, 10, 11, 12]
         ]);
 
         it('getDiagonalMaj(6) returns undefined', () => {
             expect(m.getDiagonalMaj(6)).to.equal(undefined);
         });
 
-        it('getDiagonalMaj(1) returns major diagonal with index 1 (zero-based)', () => {
-            expect(m.getDiagonalMaj(1)).to.eql([1, 4]);
+        it('getDiagonalMaj(2) returns major diagonal with index 2 (zero-based)', () => {
+            expect(m.getDiagonalMaj(2)).to.eql([2, 7, 12]);
+        });
+
+        it('getDiagonalMaj(4) returns major diagonal with index 4 (zero-based)', () => {
+            expect(m.getDiagonalMaj(4)).to.eql([5, 10]);
         });
     });
 
