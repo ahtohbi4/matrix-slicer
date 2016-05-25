@@ -12,6 +12,8 @@ class Matrix {
             return Array.isArray(row) && m[0].length === row.length;
         })) {
             this.matrix = matrix;
+            this.width = this.matrix[0].length;
+            this.height = this.matrix.length;
         } else {
             throw new Error(`"${matrix}" is not correct matrix.`);
         }
@@ -34,10 +36,10 @@ class Matrix {
         let result;
 
         begin = begin || 0;
-        begin = (begin >= 0) ? begin : this.matrix.length + begin;
+        begin = (begin >= 0) ? begin : this.height + begin;
 
-        end = end || this.matrix.length - 1;
-        end = (end >= 0) ? end : this.matrix.length + end;
+        end = end || this.height - 1;
+        end = (end >= 0) ? end : this.height + end;
 
         result = this.matrix.filter((row, i) => {
             return (begin <= i && i <= end);
@@ -71,10 +73,10 @@ class Matrix {
         let result;
 
         begin = begin || 0;
-        begin = (begin >= 0) ? begin : this.matrix[0].length + begin;
+        begin = (begin >= 0) ? begin : this.width + begin;
 
-        end = end || this.matrix[0].length - 1;
-        end = (end >= 0) ? end : this.matrix[0].length + end;
+        end = end || this.width - 1;
+        end = (end >= 0) ? end : this.width + end;
 
         for (let i = begin; i <= end; i++) {
             let column = this.matrix.map((row) => {
