@@ -183,7 +183,7 @@ describe('Get matrix items:', () => {
         });
 
         it('getDiagonalMin(1) returns minor diagonal with zero-based index 1', () => {
-            expect(m.getDiagonalMin(1)).to.eql([3, 6]);
+            expect(m.getDiagonalMin(1)).to.eql([2, 3]);
         });
     });
 
@@ -204,12 +204,12 @@ describe('Get matrix items:', () => {
             expect(m.getDiagonalsMin(-3)).to.eql([[4, 5], [6, 7], [8]]);
         });
 
-        it('getDiagonalsMin(1, 2) returns minor diagonals beginning from zero-based index 1 to index 2 (zero-based)', () => {
-            expect(m.getDiagonalsMin(1, 2)).to.eql([[2, 3], [4, 5]]);
+        it('getDiagonalsMin(1, 3) returns minor diagonals beginning from zero-based index 1 to index 3', () => {
+            expect(m.getDiagonalsMin(1, 3)).to.eql([[2, 3], [4, 5]]);
         });
 
-        it('getDiagonalsMin(1, -2) returns minor diagonals beginning from zero-based index 1 to index=(<diagonals amount> + end)', () => {
-            expect(m.getDiagonalsMin(1, -2)).to.eql([[2, 3], [4, 5], [6, 7]]);
+        it('getDiagonalsMin(1, -1) returns minor diagonals beginning from zero-based index 1 to index=(<diagonals amount> + end)', () => {
+            expect(m.getDiagonalsMin(1, -1)).to.eql([[2, 3], [4, 5], [6, 7]]);
         });
     });
 });
