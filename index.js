@@ -86,6 +86,38 @@ class Matrix {
 
         return result;
     }
+
+    /**
+     * @param {number} number
+     * @returns {array}
+     */
+    getDiagonalMaj(number) {
+        let result;
+
+        if (number >= 0) {
+            if (number < this.width) {
+                // Above major diagonal
+                let j = 0;
+                result = [];
+
+                for (let i = this.width - number - 1; i < this.width; i++) {
+                    result.push(this.matrix[j][i]);
+                    j++;
+                }
+            } else if (number < this.width + this.height - 1) {
+                // Below major diagonal
+                let j = 0;
+                result = [];
+
+                for (let i = number - this.width + 1; i < this.height; i++) {
+                    result.push(this.matrix[i][j]);
+                    j++;
+                }
+            }
+        }
+
+        return result;
+    }
 }
 
 module.exports = Matrix;
