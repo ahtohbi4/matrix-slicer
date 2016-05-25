@@ -38,10 +38,10 @@ class Matrix {
         begin = begin || 0;
         begin = (begin >= 0) ? begin : this.height + begin;
 
-        end = end || this.height - 1;
+        end = end || this.height;
         end = (end >= 0) ? end : this.height + end;
 
-        for (let i = begin; i <= end; i++) {
+        for (let i = begin; i < end; i++) {
             result = result || [];
             result.push(this.getRow(i));
         }
@@ -76,10 +76,10 @@ class Matrix {
         begin = begin || 0;
         begin = (begin >= 0) ? begin : this.width + begin;
 
-        end = end || this.width - 1;
+        end = end || this.width;
         end = (end >= 0) ? end : this.width + end;
 
-        for (let i = begin; i <= end; i++) {
+        for (let i = begin; i < end; i++) {
             result = result || [];
             result.push(this.getColumn(i));
         }
@@ -93,26 +93,25 @@ class Matrix {
      */
     getDiagonalMaj(number) {
         let result;
+        let diagonalsAmount = this.width + this.height - 1;
 
-        if (number >= 0) {
+        if (number >= 0 && number < diagonalsAmount) {
+            result = [];
+            let i, j;
+
             if (number < this.width) {
                 // Above major diagonal
-                let j = 0;
-                result = [];
-
-                for (let i = this.width - number - 1; i < this.width; i++) {
-                    result.push(this.matrix[j][i]);
-                    j++;
-                }
-            } else if (number < this.width + this.height - 1) {
+                i = this.width - number - 1;
+                j = 0;
+            } else {
                 // Below major diagonal
-                let j = 0;
-                result = [];
+                i = 0;
+                j = number - this.width + 1;
+            }
 
-                for (let i = number - this.width + 1; i < this.height; i++) {
-                    result.push(this.matrix[i][j]);
-                    j++;
-                }
+            while (i < this.width && j < this.height) {
+                result.push(this.matrix[j][i]);
+                i++; j++;
             }
         }
 
