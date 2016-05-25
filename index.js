@@ -26,6 +26,27 @@ class Matrix {
     }
 
     /**
+     * @param {number} [begin=0]
+     * @param {number} [end=<rows amount>]
+     * @returns {array}
+     */
+    getRows(begin, end) {
+        let result;
+
+        begin = begin || 0;
+        begin = (begin >= 0) ? begin : this.matrix.length + begin;
+
+        end = end || this.matrix.length - 1;
+        end = (end >= 0) ? end : this.matrix.length + end;
+
+        result = this.matrix.filter((row, i) => {
+            return (begin <= i && i <= end);
+        });
+
+        return result;
+    }
+
+    /**
      * @param {number} number
      * @returns {array}
      */
