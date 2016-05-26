@@ -140,6 +140,37 @@ class Matrix {
 
         return result;
     }
+
+    /**
+     * @param {number} number
+     * @returns {array}
+     */
+    getDiagonalMin(number) {
+        let result;
+        let diagonalsAmount = this.width + this.height - 1;
+
+        if (number >= 0 && number < diagonalsAmount) {
+            result = [];
+            let i, j;
+
+            if (number < this.width) {
+                // Above minor diagonal
+                i = number;
+                j = 0;
+            } else {
+                // Below minor diagonal
+                i = this.width - 1;
+                j = number - this.width + 1;
+            }
+
+            while (i >= 0 && j < this.height) {
+                result.push(this.matrix[j][i]);
+                i--; j++;
+            }
+        }
+
+        return result;
+    }
 }
 
 module.exports = Matrix;
