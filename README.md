@@ -49,7 +49,15 @@ m.getDiagonalMaj(2); // => [35, 21, -5]
 
 // Get set of major Diagonals
 m.getDiagonalsMaj(2, -1); // => [[35, 21, -5], [2, 3, 8], [0, -1]]
+
+// Get a minor Diagonal by index (zero-based)
+m.getDiagonalMin(4); // => [6, 8]
+
+// Get set of major Diagonals
+m.getDiagonalsMin(-2, -1); // => [[11, 21, -1], [6, 8]]
 ```
+
+For more details see [description of tests](https://github.com/ahtohbi4/matrix-slicer/blob/master/test/index.test.js#L43).
 
 Test
 --
