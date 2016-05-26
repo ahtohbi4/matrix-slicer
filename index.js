@@ -211,4 +211,4 @@
         // Otherwise write to window
         window.Matrix = Matrix;
     }
-}());
+})();
