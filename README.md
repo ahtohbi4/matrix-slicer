@@ -12,4 +12,53 @@ matrix-slicer
 [appveyor-img]: https://ci.appveyor.com/api/projects/status/37l04qmn2ae7ccjf/branch/master?svg=true
 [appveyor]: https://ci.appveyor.com/project/ahtohbi4/matrix-slicer/branch/master
 
-> Slices a matrices into columns, rows, diagonals and submatrices.
+> JavaScript utility for slicing a matrix into columns, rows and diagonals.
+
+Installation
+--
+
+```bash
+$ npm install matrix-slicer --save
+```
+
+Usage
+--
+
+```javascript
+// Creating an instance
+const m = new Matrix([
+    [2, 35, -4, 11],
+    [0,  3, 21,  6],
+    [7, -1,  8, -5]
+]);
+
+// Get a Row by index (zero-based)
+m.getRow(1); // => [0,  3, 21,  6]
+
+// Get set of Rows
+m.getRows(0, 2); // => [[2, 35, -4, 11], [0, 3, 21, 6]]
+
+// Get a Column by index (zero-based)
+m.getColumn(2); // => [-4, 21, 8]
+
+// Get set of Columns
+m.getColumns(1, 3); // => [[35, 3, -1], [-4, 21, 8]]
+
+// Get a major Diagonal by index (zero-based)
+m.getDiagonalMaj(2); // => [35, 21, -5]
+
+// Get set of major Diagonals
+m.getDiagonalsMaj(2, -1); // => [[35, 21, -5], [2, 3, 8], [0, -1]]
+```
+
+Test
+--
+
+```bash
+$ npm test
+```
+
+License
+--
+
+MIT © Alexander Antonov <alexandr-post@yandex.ru>
