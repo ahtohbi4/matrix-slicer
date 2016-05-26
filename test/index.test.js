@@ -185,6 +185,10 @@ describe('Get matrix items:', () => {
         it('getDiagonalMin(1) returns minor diagonal with zero-based index 1', () => {
             expect(m.getDiagonalMin(1)).to.eql([2, 3]);
         });
+
+        it('getDiagonalMin(2) returns minor diagonal with zero-based index 2', () => {
+            expect(m.getDiagonalMin(2)).to.eql([4, 5]);
+        });
     });
 
     // Minor diagonals by indices range
