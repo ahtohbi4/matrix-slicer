@@ -171,6 +171,29 @@ class Matrix {
 
         return result;
     }
+
+    /**
+     * @param {number} [begin=0]
+     * @param {number} [end=<parallel diagonals amount>]
+     * @returns {array}
+     */
+    getDiagonalsMin(begin, end) {
+        let result;
+        let diagonalsAmount = this.width + this.height - 1;
+
+        begin = begin || 0;
+        begin = (begin >= 0) ? begin : diagonalsAmount + begin;
+
+        end = end || diagonalsAmount;
+        end = (end >= 0) ? end : diagonalsAmount + end;
+
+        for (let i = begin; i < end; i++) {
+            result = result || [];
+            result.push(this.getDiagonalMin(i));
+        }
+
+        return result;
+    }
 }
 
 module.exports = Matrix;
