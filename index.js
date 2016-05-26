@@ -12,8 +12,12 @@ class Matrix {
             return Array.isArray(row) && m[0].length === row.length;
         })) {
             this.matrix = matrix;
-            this.width = this.matrix[0].length;
-            this.height = this.matrix.length;
+
+            this.size = {
+                width: this.matrix[0].length,
+                height: this.matrix.length,
+                diagonal: this.matrix[0].length + this.matrix.length - 1
+            };
         } else {
             throw new Error(`"${matrix}" is not correct matrix.`);
         }
@@ -36,10 +40,10 @@ class Matrix {
         let result;
 
         begin = begin || 0;
-        begin = (begin >= 0) ? begin : this.height + begin;
+        begin = (begin >= 0) ? begin : this.size.height + begin;
 
-        end = end || this.height;
-        end = (end >= 0) ? end : this.height + end;
+        end = end || this.size.height;
+        end = (end >= 0) ? end : this.size.height + end;
 
         for (let i = begin; i < end; i++) {
             result = result || [];
@@ -74,10 +78,10 @@ class Matrix {
         let result;
 
         begin = begin || 0;
-        begin = (begin >= 0) ? begin : this.width + begin;
+        begin = (begin >= 0) ? begin : this.size.width + begin;
 
-        end = end || this.width;
-        end = (end >= 0) ? end : this.width + end;
+        end = end || this.size.width;
+        end = (end >= 0) ? end : this.size.width + end;
 
         for (let i = begin; i < end; i++) {
             result = result || [];
@@ -93,23 +97,22 @@ class Matrix {
      */
     getDiagonalMaj(number) {
         let result;
-        let diagonalsAmount = this.width + this.height - 1;
 
-        if (number >= 0 && number < diagonalsAmount) {
+        if (number >= 0 && number < this.size.diagonal) {
             result = [];
             let i, j;
 
-            if (number < this.width) {
+            if (number < this.size.width) {
                 // Above major diagonal
-                i = this.width - number - 1;
+                i = this.size.width - number - 1;
                 j = 0;
             } else {
                 // Below major diagonal
                 i = 0;
-                j = number - this.width + 1;
+                j = number - this.size.width + 1;
             }
 
-            while (i < this.width && j < this.height) {
+            while (i < this.size.width && j < this.size.height) {
                 result.push(this.matrix[j][i]);
                 i++; j++;
             }
@@ -125,13 +128,12 @@ class Matrix {
      */
     getDiagonalsMaj(begin, end) {
         let result;
-        let diagonalsAmount = this.width + this.height - 1;
 
         begin = begin || 0;
-        begin = (begin >= 0) ? begin : diagonalsAmount + begin;
+        begin = (begin >= 0) ? begin : this.size.diagonal + begin;
 
-        end = end || diagonalsAmount;
-        end = (end >= 0) ? end : diagonalsAmount + end;
+        end = end || this.size.diagonal;
+        end = (end >= 0) ? end : this.size.diagonal + end;
 
         for (let i = begin; i < end; i++) {
             result = result || [];
@@ -147,23 +149,22 @@ class Matrix {
      */
     getDiagonalMin(number) {
         let result;
-        let diagonalsAmount = this.width + this.height - 1;
 
-        if (number >= 0 && number < diagonalsAmount) {
+        if (number >= 0 && number < this.size.diagonal) {
             result = [];
             let i, j;
 
-            if (number < this.width) {
+            if (number < this.size.width) {
                 // Above minor diagonal
                 i = number;
                 j = 0;
             } else {
                 // Below minor diagonal
-                i = this.width - 1;
-                j = number - this.width + 1;
+                i = this.size.width - 1;
+                j = number - this.size.width + 1;
             }
 
-            while (i >= 0 && j < this.height) {
+            while (i >= 0 && j < this.size.height) {
                 result.push(this.matrix[j][i]);
                 i--; j++;
             }
@@ -179,13 +180,12 @@ class Matrix {
      */
     getDiagonalsMin(begin, end) {
         let result;
-        let diagonalsAmount = this.width + this.height - 1;
 
         begin = begin || 0;
-        begin = (begin >= 0) ? begin : diagonalsAmount + begin;
+        begin = (begin >= 0) ? begin : this.size.diagonal + begin;
 
-        end = end || diagonalsAmount;
-        end = (end >= 0) ? end : diagonalsAmount + end;
+        end = end || this.size.diagonal;
+        end = (end >= 0) ? end : this.size.diagonal + end;
 
         for (let i = begin; i < end; i++) {
             result = result || [];
