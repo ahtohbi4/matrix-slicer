@@ -25,6 +25,13 @@
         }
 
         /**
+         * @returns {array}
+         */
+        get() {
+            return this.matrix;
+        }
+
+        /**
          * @param {number} number
          * @returns {array}
          */

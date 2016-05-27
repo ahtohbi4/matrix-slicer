@@ -32,8 +32,11 @@ const m = new Matrix([
     [7, -1,  8, -5]
 ]);
 
+// Get matrix
+m.get(); => [[2, 35, -4, 11], [0, 3, 21, 6], [7, -1, 8, -5]]
+
 // Get a Row by index (zero-based)
-m.getRow(1); // => [0,  3, 21,  6]
+m.getRow(1); // => [0, 3, 21, 6]
 
 // Get set of Rows
 m.getRows(0, 2); // => [[2, 35, -4, 11], [0, 3, 21, 6]]
