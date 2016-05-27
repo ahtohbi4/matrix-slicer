@@ -57,6 +57,19 @@ describe('Get matrix items:', () => {
         });
     });
 
+    // Instance
+    describe('get()', () => {
+        const m = new Matrix([
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ]);
+
+        it('get() returns matrix', () => {
+            expect(m.get()).to.eql([[1, 2], [3, 4], [5, 6]]);
+        });
+    });
+
     // Rows by indices range
     describe('getRows(begin[, end])', () => {
         const m = new Matrix([
