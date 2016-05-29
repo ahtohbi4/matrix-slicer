@@ -54,6 +54,22 @@ describe('Get matrix items:', () => {
         });
     });
 
+    // Single element by index
+    describe('getElem(x, y)', () => {
+        const m = new Matrix([
+            [1, 2],
+            [3, 4]
+        ]);
+
+        it('getElem(0, 6) returns undefined', () => {
+            expect(m.getElem(0, 6)).to.equal(undefined);
+        });
+
+        it('getElem(1, 0) returns row with zero-based coordinates (1, 0)', () => {
+            expect(m.getElem(1, 0)).to.eql(2);
+        });
+    });
+
     // Single row by index
     describe('getRow(number)', () => {
         const m = new Matrix([

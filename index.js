@@ -32,6 +32,21 @@
         }
 
         /**
+         * @param {number} x
+         * @param {number} y
+         * @returns {<matrix item>}
+         */
+        getElem(x, y) {
+            let result;
+
+            if (x < this.size.width && y < this.size.height) {
+                result = this.matrix[y][x];
+            }
+
+            return result;
+        }
+
+        /**
          * @param {number} number
          * @returns {array}
          */
