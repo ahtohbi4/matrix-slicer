@@ -41,6 +41,19 @@ describe('Initialization a new instance with', () => {
 });
 
 describe('Get matrix items:', () => {
+    // Matrix
+    describe('get()', () => {
+        const m = new Matrix([
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ]);
+
+        it('get() returns matrix', () => {
+            expect(m.get()).to.eql([[1, 2], [3, 4], [5, 6]]);
+        });
+    });
+
     // Single row by index
     describe('getRow(number)', () => {
         const m = new Matrix([
@@ -54,19 +67,6 @@ describe('Get matrix items:', () => {
 
         it('getRow(1) returns row with zero-based index 1', () => {
             expect(m.getRow(1)).to.eql([3, 4]);
-        });
-    });
-
-    // Instance
-    describe('get()', () => {
-        const m = new Matrix([
-            [1, 2],
-            [3, 4],
-            [5, 6]
-        ]);
-
-        it('get() returns matrix', () => {
-            expect(m.get()).to.eql([[1, 2], [3, 4], [5, 6]]);
         });
     });
 
