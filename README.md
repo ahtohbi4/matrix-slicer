@@ -36,7 +36,10 @@ const m = new Matrix([
 m.get(); // => [[2, 35, -4, 11], [0, 3, 21, 6], [7, -1, 8, -5]]
 
 // Get an Element by coordinates (zero-based)
-m.getRow(2, 1); // => 21
+m.getElem(2, 1); // => 21
+
+// Get set of Elements
+m.getElems(1, 1, 2, 2); // => [3, 21, 6, 7, -1]
 
 // Get a Row by index (zero-based)
 m.getRow(1); // => [0, 3, 21, 6]
