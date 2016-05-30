@@ -24,6 +24,45 @@ $ npm install matrix-slicer --save
 Usage
 --
 
+#### Javascript
+
+Put [script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+
+```javascript
+var m = new window.Matrix([
+    [1, 2],
+    [3, 4]
+]);
+```
+
+#### AMD
+
+Put [script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+
+```javascript
+require([
+    'matrix-slicer'
+], function(Matrix) {
+    // your code here
+});
+```
+
+#### Node.js
+
+Install npm package and use it.
+
+```javascript
+var Matrix = require('matrix-slicer');
+
+var m = new Matrix([
+    [1, 2],
+    [3, 4]
+]);
+```
+
+Methods
+--
+
 ```javascript
 // Creating an instance
 const m = new Matrix([
