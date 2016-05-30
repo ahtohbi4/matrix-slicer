@@ -47,6 +47,45 @@
         }
 
         /**
+         * @param {number} [beginX=0]
+         * @param {number} [beginY=0]
+         * @param {number} [endX=<columns amount>]
+         * @param {number} [endY=<rows amount>]
+         * @returns {array}
+         */
+        getElems(beginX, beginY, endX, endY) {
+            let result;
+
+            beginX = (typeof beginX === 'number') ? beginX : 0;
+            beginX = (beginX >= 0) ? beginX : this.size.width + beginX;
+
+            beginY = (typeof beginY === 'number') ? beginY : 0;
+            beginY = (beginY >= 0) ? beginY : this.size.height + beginY;
+
+            endX = (typeof endX === 'number') ? endX : this.size.width;
+            endX = (endX >= 0) ? endX : this.size.width + endX;
+
+            endY = (typeof endY === 'number') ? endY : this.size.height - 1;
+            endY = (endY >= 0) ? endY : this.size.height + endY;
+
+            let i = beginX;
+
+            for (let j = beginY; j <= endY; j++) {
+                result = result || [];
+
+                while (j == endY && i < endX || j < endY && i < this.size.width) {
+                    result.push(this.getElem(i, j));
+
+                    i++;
+                }
+
+                i = 0;
+            }
+
+            return result;
+        }
+
+        /**
          * @param {number} number
          * @returns {array}
          */

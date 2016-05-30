@@ -70,6 +70,32 @@ describe('Get matrix items:', () => {
         });
     });
 
+    // Elements by indices
+    describe('getElems(beginX, beginY[, endX, endY])', () => {
+        const m = new Matrix([
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+            [10, 11, 12]
+        ]);
+
+        it('getElems(1, 2) returns elements beginning from zero-based coordinates (1, 2) to the last one', () => {
+            expect(m.getElems(1, 2)).to.eql([8, 9, 10, 11, 12]);
+        });
+
+        it('getElems(-1, 3) returns elements beginning from zero-based coordinates (<columns amount> + beginX, beginY) to the last one', () => {
+            expect(m.getElems(-2, 3)).to.eql([11, 12]);
+        });
+
+        it('getElems(1, 1, 1, 2) returns elements beginning from zero-based coordinates (1, 1) to coordinates (1, 2)', () => {
+            expect(m.getElems(1, 1, 1, 2)).to.eql([5, 6, 7]);
+        });
+
+        it('getElems(1, 1, -2, -2) returns elements beginning from zero-based coordinates (1, 1) to coordinates (<columns amount> + endX, <rows amount> + endY)', () => {
+            expect(m.getElems(1, 1, -2, -2)).to.eql([5, 6, 7]);
+        });
+    });
+
     // Single row by index
     describe('getRow(number)', () => {
         const m = new Matrix([
