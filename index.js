@@ -101,10 +101,10 @@
         getRows(begin, end) {
             let result;
 
-            begin = begin || 0;
+            begin = (typeof begin === 'number') ? begin : 0;
             begin = (begin >= 0) ? begin : this.size.height + begin;
 
-            end = end || this.size.height;
+            end = (typeof end === 'number') ? end : this.size.height;
             end = (end >= 0) ? end : this.size.height + end;
 
             for (let i = begin; i < end; i++) {
@@ -139,10 +139,10 @@
         getColumns(begin, end) {
             let result;
 
-            begin = begin || 0;
+            begin = (typeof begin === 'number') ? begin : 0;
             begin = (begin >= 0) ? begin : this.size.width + begin;
 
-            end = end || this.size.width;
+            end = (typeof end === 'number') ? end : this.size.width;
             end = (end >= 0) ? end : this.size.width + end;
 
             for (let i = begin; i < end; i++) {
@@ -160,7 +160,7 @@
         getDiagonalMaj(number) {
             let result;
 
-            if (number >= 0 && number < this.size.diagonal) {
+            if (typeof number === 'number' && number >= 0 && number < this.size.diagonal) {
                 result = [];
                 let i, j;
 
@@ -191,10 +191,10 @@
         getDiagonalsMaj(begin, end) {
             let result;
 
-            begin = begin || 0;
+            begin = (typeof begin === 'number') ? begin : 0;
             begin = (begin >= 0) ? begin : this.size.diagonal + begin;
 
-            end = end || this.size.diagonal;
+            end = (typeof end === 'number') ? end : this.size.diagonal;
             end = (end >= 0) ? end : this.size.diagonal + end;
 
             for (let i = begin; i < end; i++) {
@@ -212,7 +212,7 @@
         getDiagonalMin(number) {
             let result;
 
-            if (number >= 0 && number < this.size.diagonal) {
+            if (typeof number === 'number' && number >= 0 && number < this.size.diagonal) {
                 result = [];
                 let i, j;
 
@@ -243,10 +243,10 @@
         getDiagonalsMin(begin, end) {
             let result;
 
-            begin = begin || 0;
+            begin = (typeof begin === 'number') ? begin : 0;
             begin = (begin >= 0) ? begin : this.size.diagonal + begin;
 
-            end = end || this.size.diagonal;
+            end = (typeof end === 'number') ? end : this.size.diagonal;
             end = (end >= 0) ? end : this.size.diagonal + end;
 
             for (let i = begin; i < end; i++) {
