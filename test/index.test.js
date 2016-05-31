@@ -83,7 +83,7 @@ describe('Get matrix items:', () => {
             expect(m.getElems(1, 2)).to.eql([8, 9, 10, 11, 12]);
         });
 
-        it('getElems(-1, 3) returns elements beginning from zero-based coordinates (<columns amount> + beginX, beginY) to the last one', () => {
+        it('getElems(-2, 3) returns elements beginning from zero-based coordinates (<columns amount> + beginX, beginY) to the last one', () => {
             expect(m.getElems(-2, 3)).to.eql([11, 12]);
         });
 
