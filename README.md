@@ -103,6 +103,9 @@ m.getDiagonalMin(4); // => [6, 8]
 
 // Get set of major Diagonals
 m.getDiagonalsMin(-2, -1); // => [[11, 21, -1], [6, 8]]
+
+// Get a Submatrix
+m.getSubmatrix(1, 1, 3); // => [[3, 21], [-1, 8]]
 ```
 
 For more details see [description of tests](https://github.com/ahtohbi4/matrix-slicer/blob/master/test/index.test.js#L43).

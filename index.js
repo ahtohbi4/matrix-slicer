@@ -256,6 +256,38 @@
 
             return result;
         }
+
+        /**
+         * @param {number} [beginX=0]
+         * @param {number} [beginY=0]
+         * @param {number} [endX=<columns amount>]
+         * @param {number} [endY=<rows amount>]
+         * @returns {array}
+         */
+        getSubmatrix(beginX, beginY, endX, endY) {
+            let result;
+
+            beginX = (typeof beginX === 'number') ? beginX : 0;
+            beginX = (beginX >= 0) ? beginX : this.size.width + beginX;
+
+            beginY = (typeof beginY === 'number') ? beginY : 0;
+            beginY = (beginY >= 0) ? beginY : this.size.height + beginY;
+
+            endX = (typeof endX === 'number') ? endX : this.size.width;
+            endX = (endX >= 0) ? endX : this.size.width + endX;
+
+            endY = (typeof endY === 'number') ? endY : this.size.height;
+            endY = (endY >= 0) ? endY : this.size.height + endY;
+
+            for (let i = beginY; i < endY; i++) {
+                result = result || [];
+                result.push(this.matrix[i].filter((item, j) => {
+                    return (j >= beginX && j < endX);
+                }));
+            }
+
+            return result;
+        }
     }
 
     if (typeof define === 'function') {

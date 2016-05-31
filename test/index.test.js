@@ -271,4 +271,44 @@ describe('Get matrix items:', () => {
             expect(m.getDiagonalsMin(1, -1)).to.eql([[2, 3], [4, 5], [6, 7]]);
         });
     });
+
+    // Submatrix
+    describe('getSubmatrix(beginX, beginY[, endX, endY])', () => {
+        const m = new Matrix([
+            [ 1,  2,  3,  4],
+            [ 5,  6,  7,  8],
+            [ 9, 10, 11, 12],
+            [13, 14, 15, 16],
+            [17, 18, 19, 20]
+        ]);
+
+        it('getSubmatrix(2, 2) returns submatrix beginning from zero-based coordinates (2, 2) to the end', () => {
+            expect(m.getSubmatrix(2, 2, undefined, undefined)).to.eql([
+                [11, 12],
+                [15, 16],
+                [19, 20]
+            ]);
+        });
+
+        it('getSubmatrix(-2, 3) returns submatrix beginning from zero-based coordinates (<columns amount> + beginX, beginY) to the last one', () => {
+            expect(m.getSubmatrix(-2, 3)).to.eql([
+                [15, 16],
+                [19, 20]
+            ]);
+        });
+
+        it('getSubmatrix(1, 1, 1, 2) returns submatrix beginning from zero-based coordinates (1, 1) to coordinates (1, 2)', () => {
+            expect(m.getSubmatrix(1, 1, 2, 3)).to.eql([
+                [6],
+                [10]
+            ]);
+        });
+
+        it('getSubmatrix(1, 1, -2, -2) returns submatrix beginning from zero-based coordinates (1, 1) to coordinates (<columns amount> + endX, <rows amount> + endY)', () => {
+            expect(m.getSubmatrix(1, 1, -2, -2)).to.eql([
+                [6],
+                [10]
+            ]);
+        });
+    });
 });
