@@ -114,6 +114,9 @@ Test
 --
 
 ```bash
+$ git clone https://github.com/ahtohbi4/matrix-slicer.git
+$ cd matrix-slicer
+$ npm install
 $ npm test
 ```
 
