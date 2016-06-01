@@ -12,7 +12,7 @@ matrix-slicer
 [appveyor-img]: https://ci.appveyor.com/api/projects/status/37l04qmn2ae7ccjf/branch/master?svg=true
 [appveyor]: https://ci.appveyor.com/project/ahtohbi4/matrix-slicer/branch/master
 
-> JavaScript utility for slicing a matrix into columns, rows and diagonals.
+> JavaScript utility for slicing a matrix into elements, columns, rows, diagonals and submatrices.
 
 Installation
 --
