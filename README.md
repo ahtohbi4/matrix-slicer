@@ -1,7 +1,7 @@
 matrix-slicer
 ==
 
-[![npm version][version-img]][version] [![devDependency Status][dependency-img]][dependency] [![Travis Build Status][travis-img]][travis] [![Appveyor Build Status][appveyor-img]][appveyor]
+[![npm version][version-img]][version] [![devDependency Status][dependency-img]][dependency] [![Travis Build Status][travis-img]][travis] [![Appveyor Build Status][appveyor-img]][appveyor] [![Code Climate][codeclimate-img]][codeclimate]
 
 [dependency-img]: https://david-dm.org/ahtohbi4/matrix-slicer/dev-status.svg
 [dependency]: https://david-dm.org/ahtohbi4/matrix-slicer#info=devDependencies
@@ -11,6 +11,8 @@ matrix-slicer
 [travis]: https://travis-ci.org/ahtohbi4/matrix-slicer
 [appveyor-img]: https://ci.appveyor.com/api/projects/status/37l04qmn2ae7ccjf/branch/master?svg=true
 [appveyor]: https://ci.appveyor.com/project/ahtohbi4/matrix-slicer/branch/master
+[codeclimate-img]: https://codeclimate.com/github/ahtohbi4/matrix-slicer/badges/gpa.svg
+[codeclimate]: https://codeclimate.com/github/ahtohbi4/matrix-slicer
 
 > JavaScript utility for slicing a matrix into elements, columns, rows, diagonals and submatrices.
 
