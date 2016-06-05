@@ -73,7 +73,7 @@
             for (let j = beginY; j <= endY; j++) {
                 result = result || [];
 
-                while (j == endY && i < endX || j < endY && i < this.size.width) {
+                while (j === endY && i < endX || j < endY && i < this.size.width) {
                     result.push(this.getElem(i, j));
 
                     i++;
