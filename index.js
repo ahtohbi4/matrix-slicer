@@ -281,9 +281,11 @@
 
             for (let i = beginY; i < endY; i++) {
                 result = result || [];
-                result.push(this.matrix[i].filter((item, j) => {
+
+                const row = this.matrix[i].filter((item, j) => {
                     return (j >= beginX && j < endX);
-                }));
+                });
+                result.push(row);
             }
 
             return result;
