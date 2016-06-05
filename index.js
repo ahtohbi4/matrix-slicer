@@ -279,13 +279,16 @@
             endY = (typeof endY === 'number') ? endY : this.size.height;
             endY = (endY >= 0) ? endY : this.size.height + endY;
 
+            const filterRow = (row) => {
+                return row.filter((item, j) => {
+                    return (j >= beginX && j < endX);
+                });
+            };
+
             for (let i = beginY; i < endY; i++) {
                 result = result || [];
 
-                const row = this.matrix[i].filter((item, j) => {
-                    return (j >= beginX && j < endX);
-                });
-                result.push(row);
+                result.push(filterRow(this.matrix[i]));
             }
 
             return result;
