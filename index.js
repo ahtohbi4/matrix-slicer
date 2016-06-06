@@ -32,6 +32,49 @@
         }
 
         /**
+         * @param {number} value
+         * @param {number} valueMax
+         * @returns {number}
+         * @privet
+         */
+        _normalize(value, valueMax) {
+            let result = 0;
+
+            if (typeof value === 'number') {
+                result = (value >= 0) ? value : (valueMax + value);
+            }
+
+            return result;
+        }
+
+        /**
+         * @param {number} x
+         * @returns {number}
+         * @privet
+         */
+        _normalizeX(x) {
+            return this._normalize(x, this.size.width);
+        }
+
+        /**
+         * @param {number} y
+         * @returns {number}
+         * @privet
+         */
+        _normalizeY(y) {
+            return this._normalize(y, this.size.height);
+        }
+
+        /**
+         * @param {number} d
+         * @returns {number}
+         * @privet
+         */
+        _normalizeD(d) {
+            return this._normalize(d, this.size.diagonal);
+        }
+
+        /**
          * @param {number} x
          * @param {number} y
          * @returns {<matrix item>}
@@ -56,17 +99,10 @@
         getElems(beginX, beginY, endX, endY) {
             let result;
 
-            beginX = (typeof beginX === 'number') ? beginX : 0;
-            beginX = (beginX >= 0) ? beginX : this.size.width + beginX;
-
-            beginY = (typeof beginY === 'number') ? beginY : 0;
-            beginY = (beginY >= 0) ? beginY : this.size.height + beginY;
-
-            endX = (typeof endX === 'number') ? endX : this.size.width;
-            endX = (endX >= 0) ? endX : this.size.width + endX;
-
-            endY = (typeof endY === 'number') ? endY : this.size.height - 1;
-            endY = (endY >= 0) ? endY : this.size.height + endY;
+            beginX = this._normalizeX(beginX);
+            beginY = this._normalizeY(beginY);
+            endX = this._normalizeX(endX || this.size.width);
+            endY = this._normalizeY(endY || this.size.height - 1);
 
             let i = beginX;
 
@@ -101,11 +137,8 @@
         getRows(begin, end) {
             let result;
 
-            begin = (typeof begin === 'number') ? begin : 0;
-            begin = (begin >= 0) ? begin : this.size.height + begin;
-
-            end = (typeof end === 'number') ? end : this.size.height;
-            end = (end >= 0) ? end : this.size.height + end;
+            begin = this._normalizeY(begin);
+            end = this._normalizeY(end || this.size.height);
 
             for (let i = begin; i < end; i++) {
                 result = result || [];
@@ -139,11 +172,8 @@
         getColumns(begin, end) {
             let result;
 
-            begin = (typeof begin === 'number') ? begin : 0;
-            begin = (begin >= 0) ? begin : this.size.width + begin;
-
-            end = (typeof end === 'number') ? end : this.size.width;
-            end = (end >= 0) ? end : this.size.width + end;
+            begin = this._normalizeX(begin);
+            end = this._normalizeX(end || this.size.width);
 
             for (let i = begin; i < end; i++) {
                 result = result || [];
@@ -191,11 +221,8 @@
         getDiagonalsMaj(begin, end) {
             let result;
 
-            begin = (typeof begin === 'number') ? begin : 0;
-            begin = (begin >= 0) ? begin : this.size.diagonal + begin;
-
-            end = (typeof end === 'number') ? end : this.size.diagonal;
-            end = (end >= 0) ? end : this.size.diagonal + end;
+            begin = this._normalizeD(begin);
+            end = this._normalizeD(end || this.size.diagonal);
 
             for (let i = begin; i < end; i++) {
                 result = result || [];
@@ -243,11 +270,8 @@
         getDiagonalsMin(begin, end) {
             let result;
 
-            begin = (typeof begin === 'number') ? begin : 0;
-            begin = (begin >= 0) ? begin : this.size.diagonal + begin;
-
-            end = (typeof end === 'number') ? end : this.size.diagonal;
-            end = (end >= 0) ? end : this.size.diagonal + end;
+            begin = this._normalizeD(begin);
+            end = this._normalizeD(end || this.size.diagonal);
 
             for (let i = begin; i < end; i++) {
                 result = result || [];
@@ -267,17 +291,10 @@
         getSubmatrix(beginX, beginY, endX, endY) {
             let result;
 
-            beginX = (typeof beginX === 'number') ? beginX : 0;
-            beginX = (beginX >= 0) ? beginX : this.size.width + beginX;
-
-            beginY = (typeof beginY === 'number') ? beginY : 0;
-            beginY = (beginY >= 0) ? beginY : this.size.height + beginY;
-
-            endX = (typeof endX === 'number') ? endX : this.size.width;
-            endX = (endX >= 0) ? endX : this.size.width + endX;
-
-            endY = (typeof endY === 'number') ? endY : this.size.height;
-            endY = (endY >= 0) ? endY : this.size.height + endY;
+            beginX = this._normalizeX(beginX);
+            beginY = this._normalizeY(beginY);
+            endX = this._normalizeX(endX || this.size.width);
+            endY = this._normalizeY(endY || this.size.height);
 
             const filterRow = (row) => {
                 return row.filter((item, j) => {
