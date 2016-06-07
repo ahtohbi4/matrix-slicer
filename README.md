@@ -28,11 +28,14 @@ Usage
 
 Put [script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
-```javascript
-var m = new window.Matrix([
-    [1, 2],
-    [3, 4]
-]);
+```html
+<script src="/lib/matrix-slicer/index.js"></script>
+<script>
+    var m = new Matrix([
+        [1, 2],
+        [3, 4]
+    ]);
+</script>
 ```
 
 #### AMD
