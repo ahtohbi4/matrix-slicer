@@ -311,16 +311,4 @@ describe('Get matrix items:', () => {
             ]);
         });
     });
-
-    // Specific cases
-    describe('in specific cases', () => {
-        it('getElems(0, 0, null, 1) returns elements beginning from zero-based coordinates (0, 0) to coordinates (<last column>, 1)', () => {
-            const m = new Matrix([
-                [1, 2, 3],
-                [4, 5, 6]
-            ]);
-
-            expect(m.getElems(0, 0, null, 0)).to.eql([1, 2, 3]);
-        });
-    });
 });
