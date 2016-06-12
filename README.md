@@ -94,7 +94,7 @@ Pass dimensions of matrix and callback function to generation of each element by
 ```javascript
 const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
     return i * j;
-}); // => [[0, 0], [0, 2]]
+}); // => [[0, 0], [0, 1]]
 ```
 
 where:
