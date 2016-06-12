@@ -66,8 +66,46 @@ var m = new Matrix([
 Methods
 --
 
+#### Creating instance of the Matrix
+
+Pass a regular matrix.
+
+``javascript
+const m = new Matrix([
+    ['bird', 'dog'],
+    ['cat', 'elephant']
+]);
+```
+
+Pass dimensions of matrix by "<width>, <height>".
+
+``javascript
+const m = new Matrix(3, 2); // => [[0, 0, 0], [0, 0, 0]]
+```
+
+Pass dimensions of matrix and element by "<width>, <height>, <element>".
+
+``javascript
+const m = new Matrix(2, 2, 'Foo'); // => [['Foo', 'Foo'], ['Foo', 'Foo']]
+```
+
+Pass dimensions of matrix and callback function to generation of each element by "<width>, <height>, <callback>".
+
+``javascript
+const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
+    return i * j;
+}); // => [[0, 0], [0, 2]]
+```
+
+where:
+ * {number} i - columns number of current element;
+ * {number} j - rows number of current element;
+ * {number} m - width of matrix;
+ * {number} n - height of matrix;
+ * {array} matrix - matrix, created till current element;
+
+#### Getting an elements of the MAtrix
 ```javascript
-// Creating an instance
 const m = new Matrix([
     [2, 35, -4, 11],
     [0,  3, 21,  6],

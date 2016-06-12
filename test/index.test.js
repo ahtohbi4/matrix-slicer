@@ -9,25 +9,25 @@ describe('Initialization a new instance with', () => {
     it('matrix "" throws exception', () => {
         expect(() => {
             const m = new Matrix();
-        }).to.throw(/is not correct matrix/i);
+        }).to.throw(Error);
     });
 
     it('matrix "someString" throws exception', () => {
         expect(() => {
             const m = new Matrix('someString');
-        }).to.throw(/is not correct matrix/i);
+        }).to.throw(Error);
     });
 
     it('matrix "[1, 2, 3]" throws exception', () => {
         expect(() => {
             const m = new Matrix([1, 2, 3]);
-        }).to.throw(/is not correct matrix/i);
+        }).to.throw(Error);
     });
 
     it('matrix "[[1, 2], [3]]" throws exception', () => {
         expect(() => {
             const m = new Matrix([1, 2, 3]);
-        }).to.throw(/is not correct matrix/i);
+        }).to.throw(Error);
     });
 
     it('matrix "[[1, 2], [3, 4]]" not throws exception', () => {
@@ -37,6 +37,39 @@ describe('Initialization a new instance with', () => {
                 [3, 4]
             ]);
         }).to.not.throw();
+    });
+
+    // Generation of a Matrices
+    it('dimensions "2*4"', () => {
+        const m = new Matrix(2, 4);
+
+        expect(m.get()).to.eql([
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ]);
+    });
+
+    it('dimensions 2*4 and filling by letter "A"', () => {
+        const m = new Matrix(3, 2, 'A');
+
+        expect(m.get()).to.eql([
+            ['A', 'A', 'A'],
+            ['A', 'A', 'A']
+        ]);
+    });
+
+    it('dimensions 2*4 and filling by result of a callback', () => {
+        const m = new Matrix(2, 3, (i, j, m, n, matrix) => {
+            return `${i}.${j}:${m}.${n}`;
+        });
+
+        expect(m.get()).to.eql([
+            ['0.0:2.3', '1.0:2.3'],
+            ['0.1:2.3', '1.1:2.3'],
+            ['0.2:2.3', '1.2:2.3']
+        ]);
     });
 });
 

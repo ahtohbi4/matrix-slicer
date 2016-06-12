@@ -1,6 +1,21 @@
 (() => {
     'use strict';
 
+    function PropertyError(property) {
+        this.name = 'PropertyError';
+
+        this.property = property;
+        this.message = `Ошибка в свойстве ${property}`;
+
+        if (Error.captureStackTrace) {
+            Error.captureStackTrace(this, PropertyError);
+        } else {
+            this.stack = (new Error()).stack;
+        }
+    }
+
+    PropertyError.prototype = Object.create(Error.prototype);
+
     /**
      * @class
      */
@@ -8,19 +23,63 @@
         /**
          * @param {array} matrix
          */
-        constructor(matrix) {
-            if (Array.isArray(matrix) && matrix.every((row, i, m) => {
-                return Array.isArray(row) && m[0].length === row.length;
-            })) {
-                this.matrix = matrix;
+        constructor() {
+            if (arguments.length === 1) {
+                // Matrix is passed
+                const matrix = arguments[0];
 
-                this.size = {
-                    width: this.matrix[0].length,
-                    height: this.matrix.length,
-                    diagonal: this.matrix[0].length + this.matrix.length - 1
-                };
+                if (Array.isArray(matrix) && matrix.every((row, i, m) => {
+                    return Array.isArray(row) && m[0].length === row.length;
+                })) {
+                    this.matrix = matrix;
+
+                    this.size = {
+                        width: this.matrix[0].length,
+                        height: this.matrix.length,
+                        diagonal: this.matrix[0].length + this.matrix.length - 1
+                    };
+                } else {
+                    throw new PropertyError(matrix);
+                }
+            } else if (arguments.length === 2 || arguments.length === 3) {
+                // Generation of the Matrix
+                try {
+                    const element = arguments[2] || 0;
+
+                    this.size = {
+                        width: arguments[0],
+                        height: arguments[1],
+                        diagonal: arguments[0] + arguments[1] - 1
+                    };
+
+                    this.matrix = [];
+
+                    for (let j = 0; j < this.size.height; j++) {
+                        let row = [];
+
+                        for (let i = 0; i < this.size.width; i++) {
+                            let elem = (typeof element !== 'function') ? element : 0;
+
+                            row.push(elem);
+                        }
+
+                        this.matrix.push(row);
+                    }
+
+                    if (typeof element === 'function') {
+                        for (let j = 0; j < this.size.height; j++) {
+                            for (let i = 0; i < this.size.width; i++) {
+                                const matrix = this.matrix;
+
+                                this.matrix[j][i] = element.call(this, i, j, this.size.width, this.size.height, matrix);
+                            }
+                        }
+                    }
+                } catch (e) {
+                    throw new Error(e);
+                }
             } else {
-                throw new Error(`"${matrix}" is not correct matrix.`);
+                throw new Error('Expected "<matrix> || <m> , <n>[, <element> || <callback function>]".');
             }
         }
 
