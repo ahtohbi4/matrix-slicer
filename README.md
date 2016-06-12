@@ -70,7 +70,7 @@ Methods
 
 Pass a regular matrix.
 
-``javascript
+```javascript
 const m = new Matrix([
     ['bird', 'dog'],
     ['cat', 'elephant']
