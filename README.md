@@ -79,19 +79,19 @@ const m = new Matrix([
 
 Pass dimensions of matrix by "<width>, <height>".
 
-``javascript
+```javascript
 const m = new Matrix(3, 2); // => [[0, 0, 0], [0, 0, 0]]
 ```
 
 Pass dimensions of matrix and element by "<width>, <height>, <element>".
 
-``javascript
+```javascript
 const m = new Matrix(2, 2, 'Foo'); // => [['Foo', 'Foo'], ['Foo', 'Foo']]
 ```
 
 Pass dimensions of matrix and callback function to generation of each element by "<width>, <height>, <callback>".
 
-``javascript
+```javascript
 const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
     return i * j;
 }); // => [[0, 0], [0, 2]]
