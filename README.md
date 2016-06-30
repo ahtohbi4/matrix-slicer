@@ -26,7 +26,7 @@ Usage
 
 #### Javascript
 
-Put [script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+Put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
 ```html
 <script src="/lib/matrix-slicer/index.js"></script>
@@ -40,7 +40,7 @@ Put [script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/ind
 
 #### AMD
 
-Put [script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+Put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
 ```javascript
 require([
