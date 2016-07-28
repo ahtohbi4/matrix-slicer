@@ -104,49 +104,81 @@ where:
  * {number} n - height of matrix;
  * {array} matrix - matrix, created till current element;
 
-#### Getting an elements of the MAtrix
+#### Get Matrix
+
+<img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_matrix.svg">
+
 ```javascript
-const m = new Matrix([
-    [2, 35, -4, 11],
-    [0,  3, 21,  6],
-    [7, -1,  8, -5]
-]);
+m.get(); // => [['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]
+```
 
-// Get matrix
-m.get(); // => [[2, 35, -4, 11], [0, 3, 21, 6], [7, -1, 8, -5]]
+#### Get Element(s)
 
+<img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_elem.svg">
+
+```javascript
 // Get an Element by coordinates (zero-based)
-m.getElem(2, 1); // => 21
+m.getElem(0, 1); // => 'D'
 
 // Get a set of Elements
-m.getElems(1, 1, 2, 2); // => [3, 21, 6, 7, -1]
+m.getElems(1, 0, 2, 1); // => ['B', 'C', 'D', 'E', 'F']
+```
 
+#### Get Row(s)
+
+<img width="250" height="150" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_row.svg">
+
+```javascript
 // Get a Row by index (zero-based)
-m.getRow(1); // => [0, 3, 21, 6]
+m.getRow(1); // => ['D', 'E', 'F']
 
 // Get a set of Rows
-m.getRows(0, 2); // => [[2, 35, -4, 11], [0, 3, 21, 6]]
+m.getRows(0, 2); // => [['A', 'B', 'C'], ['D', 'E', 'F']]
+```
 
+#### Get Column(s)
+
+<img width="200" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_col.svg">
+
+```javascript
 // Get a Column by index (zero-based)
-m.getColumn(2); // => [-4, 21, 8]
+m.getColumn(2); // => ['C', 'F', 'I']
 
 // Get a set of Columns
-m.getColumns(1, 3); // => [[35, 3, -1], [-4, 21, 8]]
+m.getColumns(1, 3); // => [['B', 'E', 'H'], ['C', 'F', 'I']]
+```
 
+#### Get Major Diagonal(s)
+
+<img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_major_diagonal.svg">
+
+```javascript
 // Get a major Diagonal by index (zero-based)
-m.getDiagonalMaj(2); // => [35, 21, -5]
+m.getDiagonalMaj(1); // => ['B', 'F']
 
 // Get a set of major Diagonals
-m.getDiagonalsMaj(2, -1); // => [[35, 21, -5], [2, 3, 8], [0, -1]]
+m.getDiagonalsMaj(2, 4); // => [['A', 'E', 'I'], ['D', 'H']]
+```
 
+#### Get Minor Diagonal(s)
+
+<img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_minor_diagonal.svg">
+
+```javascript
 // Get a minor Diagonal by index (zero-based)
-m.getDiagonalMin(4); // => [6, 8]
+m.getDiagonalMin(4); // => ['I']
 
 // Get a set of major Diagonals
-m.getDiagonalsMin(-2, -1); // => [[11, 21, -1], [6, 8]]
+m.getDiagonalsMin(-3, -1); // => [['B', 'D'], ['C', 'E', 'G']]
+```
 
+#### Get Submatrix
+
+<img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_submatrix.svg">
+
+```javascript
 // Get a Submatrix
-m.getSubmatrix(1, 1, 3); // => [[3, 21], [-1, 8]]
+m.getSubmatrix(1, 1, 3, 3); // => [['E', 'F'], ['H', 'I']]
 ```
 
 For more details see [description of tests](https://github.com/ahtohbi4/matrix-slicer/blob/master/test/index.test.js#L43).
