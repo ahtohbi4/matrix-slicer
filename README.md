@@ -74,19 +74,19 @@ Pass a regular matrix.
 const m = new Matrix([
     ['bird', 'dog'],
     ['cat', 'elephant']
-]);
+]); // => instance of matrix [['bird', 'dog'], ['cat', 'elephant']]
 ```
 
 Pass dimensions of matrix by `"<width>, <height>"`.
 
 ```javascript
-const m = new Matrix(3, 2); // => [[0, 0, 0], [0, 0, 0]]
+const m = new Matrix(3, 2); // => instance of matrix [[0, 0, 0], [0, 0, 0]]
 ```
 
 Pass dimensions of matrix and element by `"<width>, <height>, <element>"`.
 
 ```javascript
-const m = new Matrix(2, 2, 'Foo'); // => [['Foo', 'Foo'], ['Foo', 'Foo']]
+const m = new Matrix(2, 2, 'Foo'); // => instance of matrix [['Foo', 'Foo'], ['Foo', 'Foo']]
 ```
 
 Pass dimensions of matrix and callback function to generation of each element by `"<width>, <height>, <callback>"`.
@@ -94,7 +94,7 @@ Pass dimensions of matrix and callback function to generation of each element by
 ```javascript
 const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
     return i * j;
-}); // => [[0, 0], [0, 1]]
+}); // => instance of matrix [[0, 0], [0, 1]]
 ```
 
 where:
