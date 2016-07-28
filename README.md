@@ -118,31 +118,31 @@ m.get(); // => [[2, 35, -4, 11], [0, 3, 21, 6], [7, -1, 8, -5]]
 // Get an Element by coordinates (zero-based)
 m.getElem(2, 1); // => 21
 
-// Get set of Elements
+// Get a set of Elements
 m.getElems(1, 1, 2, 2); // => [3, 21, 6, 7, -1]
 
 // Get a Row by index (zero-based)
 m.getRow(1); // => [0, 3, 21, 6]
 
-// Get set of Rows
+// Get a set of Rows
 m.getRows(0, 2); // => [[2, 35, -4, 11], [0, 3, 21, 6]]
 
 // Get a Column by index (zero-based)
 m.getColumn(2); // => [-4, 21, 8]
 
-// Get set of Columns
+// Get a set of Columns
 m.getColumns(1, 3); // => [[35, 3, -1], [-4, 21, 8]]
 
 // Get a major Diagonal by index (zero-based)
 m.getDiagonalMaj(2); // => [35, 21, -5]
 
-// Get set of major Diagonals
+// Get a set of major Diagonals
 m.getDiagonalsMaj(2, -1); // => [[35, 21, -5], [2, 3, 8], [0, -1]]
 
 // Get a minor Diagonal by index (zero-based)
 m.getDiagonalMin(4); // => [6, 8]
 
-// Get set of major Diagonals
+// Get a set of major Diagonals
 m.getDiagonalsMin(-2, -1); // => [[11, 21, -1], [6, 8]]
 
 // Get a Submatrix
