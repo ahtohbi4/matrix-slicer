@@ -185,6 +185,15 @@ m.getColumns(1, 3); // => [['B', 'E', 'H'], ['C', 'F', 'I']]
 
 #### 6. Get Major Diagonal(s)
 
+##### Syntax
+
+> _m_.getDiagonalMaj(_index_)
+>
+> Where:
+>  * _index_ - index (zero-based) of the diagonal. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
+
+##### Example
+
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_major_diagonal.svg">
 
 ```javascript
@@ -196,6 +205,15 @@ m.getDiagonalsMaj(2, 4); // => [['A', 'E', 'I'], ['D', 'H']]
 ```
 
 #### 7. Get Minor Diagonal(s)
+
+##### Syntax
+
+> _m_.getDiagonalMin(_index_)
+>
+> Where:
+>  * _index_ - index (zero-based) of the diagonal. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
+
+##### Example
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_minor_diagonal.svg">
 
