@@ -68,7 +68,7 @@ Methods
 
 #### 1. Creating instance of the Matrix
 
-Syntax
+##### Syntax
 
 > new Matrix(_matrix_ | _width_, _height_[, _element_ = 0 | _callback_])
 >
@@ -84,7 +84,7 @@ Syntax
 >    * _n_ - the _height_ of generated matrix was passed earlier;
 >    * _matrix_ - the matrix with previously generated elements.
 
-Example
+##### Example
 
 ```javascript
 // Regular matrix
@@ -107,6 +107,12 @@ const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
 
 #### 2. Get Matrix
 
+##### Syntax
+
+> _m_.get()
+
+##### Example
+
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_matrix.svg">
 
 ```javascript
@@ -114,6 +120,16 @@ m.get(); // => [['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]
 ```
 
 #### 3. Get Element(s)
+
+##### Syntax
+
+> _m_.getElem(_x_, _y_)
+>
+> Where:
+>  * _x_ - index (zero-based) of the column. If it is negative, the coordinate calculated from the end (_width_ + _x_).
+>  * _y_ - index (zero-based) of the row. If it is negative, the coordinate calculated from the end (_height_ + _y_).
+
+##### Example
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_elem.svg">
 
