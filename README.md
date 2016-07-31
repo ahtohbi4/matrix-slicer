@@ -92,18 +92,18 @@ const m = new Matrix([
 Syntax
 
 > new Matrix(_width_, _height_[, _element_ = 0 | _callback_])
-
-Parameters
-
-**width** - number of columns.<br>
-**height** - number of rows.<br>
-**element** - an element with which the matrix will be filled. By default, this is 0.<br>
-**callback** - function that produces an element of the matrix, taking three arguments:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;**i** - index (zero-based) of the column of generated the element.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;**j** - index (zero-based) of the row of generated the element.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;**m** - the _width_ of generated matrix was passed earlier.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;**n** - the _height_ of generated matrix was passed earlier.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;**matrix** - the matrix with previously generated elements.
+>
+> Where:
+>
+> **width** - number of columns.<br>
+> **height** - number of rows.<br>
+> **element** - an element with which the matrix will be filled. By default, this is 0.<br>
+> **callback** - function that produces an element of the matrix, taking three arguments:<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;**i** - index (zero-based) of the column of generated the element.<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;**j** - index (zero-based) of the row of generated the element.<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;**m** - the _width_ of generated matrix was passed earlier.<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;**n** - the _height_ of generated matrix was passed earlier.<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;**matrix** - the matrix with previously generated elements.
 
 ```javascript
 const m = new Matrix(3, 2); // => instance of matrix [[0, 0, 0], [0, 0, 0]]
