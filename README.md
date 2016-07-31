@@ -68,7 +68,17 @@ Methods
 
 #### Creating instance of the Matrix
 
-Pass a regular matrix.
+1. Pass a regular matrix.
+
+Syntax
+
+> new Matrix(_matrix_);
+
+Parameters
+
+*matrix* - regular matrix (an array of arrays with similar lengths).
+
+Example
 
 ```javascript
 const m = new Matrix([
@@ -77,7 +87,23 @@ const m = new Matrix([
 ]); // => instance of matrix [['bird', 'dog'], ['cat', 'elephant']]
 ```
 
-Pass dimensions of matrix by `"<width>, <height>"`.
+2. Pass dimensions of matrix.
+
+Syntax
+
+> new Matrix(_width_, _height_[, _element_ = 0 | _callback_])
+
+Parameters
+
+*width* - number of columns.
+*height* - number of rows.
+*element* - an element with which the matrix will be filled. By default, this is 0.
+*callback* - function that produces an element of the matrix, taking three arguments:
+    *i* - index (zero-based) of the column of generated the element.
+    *j* - index (zero-based) of the row of generated the element.
+    *m* - the _width_ of generated matrix was passed earlier.
+    *n* - the _height_ of generated matrix was passed earlier.
+    *matrix* - the matrix with previously generated elements.
 
 ```javascript
 const m = new Matrix(3, 2); // => instance of matrix [[0, 0, 0], [0, 0, 0]]
