@@ -95,23 +95,15 @@ Syntax
 
 Parameters
 
-*width* - number of columns.
-
-*height* - number of rows.
-
-*element* - an element with which the matrix will be filled. By default, this is 0.
-
-*callback* - function that produces an element of the matrix, taking three arguments:
-
-    *i* - index (zero-based) of the column of generated the element.
-    
-    *j* - index (zero-based) of the row of generated the element.
-    
-    *m* - the _width_ of generated matrix was passed earlier.
-    
-    *n* - the _height_ of generated matrix was passed earlier.
-    
-    *matrix* - the matrix with previously generated elements.
+> *width* - number of columns.
+> *height* - number of rows.
+> *element* - an element with which the matrix will be filled. By default, this is 0.
+> *callback* - function that produces an element of the matrix, taking three arguments:
+>    *i* - index (zero-based) of the column of generated the element.
+>    *j* - index (zero-based) of the row of generated the element.
+>    *m* - the _width_ of generated matrix was passed earlier.
+>    *n* - the _height_ of generated matrix was passed earlier.
+>    *matrix* - the matrix with previously generated elements.
 
 ```javascript
 const m = new Matrix(3, 2); // => instance of matrix [[0, 0, 0], [0, 0, 0]]
