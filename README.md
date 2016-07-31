@@ -66,7 +66,7 @@ var m = new Matrix([
 Methods
 --
 
-#### Creating instance of the Matrix
+#### 1. Creating instance of the Matrix
 
 Syntax
 
@@ -105,7 +105,7 @@ const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
 }); // => instance of matrix [[0, 1], [1, 2]]
 ```
 
-#### Get Matrix
+#### 2. Get Matrix
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_matrix.svg">
 
@@ -113,7 +113,7 @@ const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
 m.get(); // => [['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]
 ```
 
-#### Get Element(s)
+#### 3. Get Element(s)
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_elem.svg">
 
@@ -125,7 +125,7 @@ m.getElem(0, 1); // => 'D'
 m.getElems(1, 0, 2, 1); // => ['B', 'C', 'D', 'E', 'F']
 ```
 
-#### Get Row(s)
+#### 4. Get Row(s)
 
 <img width="250" height="150" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_row.svg">
 
@@ -137,7 +137,7 @@ m.getRow(1); // => ['D', 'E', 'F']
 m.getRows(0, 2); // => [['A', 'B', 'C'], ['D', 'E', 'F']]
 ```
 
-#### Get Column(s)
+#### 5. Get Column(s)
 
 <img width="200" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_col.svg">
 
@@ -149,7 +149,7 @@ m.getColumn(2); // => ['C', 'F', 'I']
 m.getColumns(1, 3); // => [['B', 'E', 'H'], ['C', 'F', 'I']]
 ```
 
-#### Get Major Diagonal(s)
+#### 6. Get Major Diagonal(s)
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_major_diagonal.svg">
 
@@ -161,7 +161,7 @@ m.getDiagonalMaj(1); // => ['B', 'F']
 m.getDiagonalsMaj(2, 4); // => [['A', 'E', 'I'], ['D', 'H']]
 ```
 
-#### Get Minor Diagonal(s)
+#### 7. Get Minor Diagonal(s)
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_minor_diagonal.svg">
 
@@ -173,7 +173,7 @@ m.getDiagonalMin(4); // => ['I']
 m.getDiagonalsMin(-3, -1); // => [['B', 'D'], ['C', 'E', 'G']]
 ```
 
-#### Get Submatrix
+#### 8. Get Submatrix
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_submatrix.svg">
 
