@@ -68,67 +68,42 @@ Methods
 
 #### Creating instance of the Matrix
 
-1. Pass a regular matrix.
-
 Syntax
 
-> new Matrix(_matrix_);
+> new Matrix(_matrix_ | _width_, _height_[, _element_ = 0 | _callback_])
 
-Parameters
-
-*matrix* - regular matrix (an array of arrays with similar lengths).
+Where:
+ * _matrix_ - regular matrix (an array of arrays with similar lengths);
+ * _width_ - number of columns;
+ * _height_ - number of rows;
+ * _element_ - an element with which the matrix will be filled. By default, this is 0;
+ * _callback_ - function that produces an element of the matrix, taking three arguments:
+   * _i_ - index (zero-based) of the column of generated the element;
+   * _j_ - index (zero-based) of the row of generated the element;
+   * _m_ - the _width_ of generated matrix was passed earlier;
+   * _n_ - the _height_ of generated matrix was passed earlier;
+   * _matrix_ - the matrix with previously generated elements.
 
 Example
 
 ```javascript
+// Regular matrix
 const m = new Matrix([
     ['bird', 'dog'],
     ['cat', 'elephant']
 ]); // => instance of matrix [['bird', 'dog'], ['cat', 'elephant']]
-```
 
-2. Pass dimensions of matrix.
-
-Syntax
-
-> new Matrix(_width_, _height_[, _element_ = 0 | _callback_])
->
-> Where:
->
-> **width** - number of columns.<br>
-> **height** - number of rows.<br>
-> **element** - an element with which the matrix will be filled. By default, this is 0.<br>
-> **callback** - function that produces an element of the matrix, taking three arguments:<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;**i** - index (zero-based) of the column of generated the element.<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;**j** - index (zero-based) of the row of generated the element.<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;**m** - the _width_ of generated matrix was passed earlier.<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;**n** - the _height_ of generated matrix was passed earlier.<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;**matrix** - the matrix with previously generated elements.
-
-```javascript
+// By dimensions
 const m = new Matrix(3, 2); // => instance of matrix [[0, 0, 0], [0, 0, 0]]
-```
 
-Pass dimensions of matrix and element by `"<width>, <height>, <element>"`.
-
-```javascript
+// By dimensions and filler
 const m = new Matrix(2, 2, 'Foo'); // => instance of matrix [['Foo', 'Foo'], ['Foo', 'Foo']]
-```
 
-Pass dimensions of matrix and callback function to generation of each element by `"<width>, <height>, <callback>"`.
-
-```javascript
+// By dimensions and callback function to generate elements
 const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
-    return i * j;
-}); // => instance of matrix [[0, 0], [0, 1]]
+    return i + j;
+}); // => instance of matrix [[0, 1], [1, 2]]
 ```
-
-where:
- * {number} i - columns number of current element;
- * {number} j - rows number of current element;
- * {number} m - width of matrix;
- * {number} n - height of matrix;
- * {array} matrix - matrix, created till current element;
 
 #### Get Matrix
 
