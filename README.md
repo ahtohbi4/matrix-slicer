@@ -143,6 +143,15 @@ m.getElems(1, 0, 2, 1); // => ['B', 'C', 'D', 'E', 'F']
 
 #### 4. Get Row(s)
 
+##### Syntax
+
+> _m_.getRow(_y_)
+>
+> Where:
+>  * _y_ - index (zero-based) of the row. If it is negative, the coordinate calculated from the end (_height_ + _y_).
+
+##### Example
+
 <img width="250" height="150" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_row.svg">
 
 ```javascript
@@ -154,6 +163,15 @@ m.getRows(0, 2); // => [['A', 'B', 'C'], ['D', 'E', 'F']]
 ```
 
 #### 5. Get Column(s)
+
+##### Syntax
+
+> _m_.getColumn(_x_)
+>
+> Where:
+>  * _x_ - index (zero-based) of the column. If it is negative, the coordinate calculated from the end (_width_ + _x_).
+
+##### Example
 
 <img width="200" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_col.svg">
 
