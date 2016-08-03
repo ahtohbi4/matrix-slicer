@@ -128,6 +128,14 @@ m.get(); // => [['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]
 > Where:
 >  * _x_ - index (zero-based) of the column. If it is negative, the coordinate calculated from the end (_width_ + _x_).
 >  * _y_ - index (zero-based) of the row. If it is negative, the coordinate calculated from the end (_height_ + _y_).
+>
+> _m_.getElems(_fromX_, _fromY_, _toX_, _toY_)
+>
+> Where:
+>  * _fromX_ - index (zero-based) of the column of start element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
+>  * _fromY_ - index (zero-based) of the row of start element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
+>  * _toX_ - index (zero-based) of the column of end element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
+>  * _toY_ - index (zero-based) of the row of end element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
 
 ##### Example
 
