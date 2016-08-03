@@ -237,7 +237,7 @@ m.getDiagonalsMin(-3, -1); // => [['B', 'D'], ['C', 'E', 'G']]
 >  * _toX_ - index (zero-based) of the column of end element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
 >  * _toY_ - index (zero-based) of the row of end element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
 
-##### Example of start element
+##### Example
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_submatrix.svg">
 
