@@ -129,6 +129,7 @@ m.get(); // => [['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]
 >  * _x_ - index (zero-based) of the column. If it is negative, the coordinate calculated from the end (_width_ + _x_).
 >  * _y_ - index (zero-based) of the row. If it is negative, the coordinate calculated from the end (_height_ + _y_).
 
+
 > _m_.getElems(_fromX_, _fromY_, _toX_, _toY_)
 >
 > Where:
