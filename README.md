@@ -71,18 +71,18 @@ Methods
 ##### Syntax
 
 > new Matrix(_matrix_ | _width_, _height_[, _element_ = 0 | _callback_])
->
-> Where:
->  * _matrix_ - regular matrix (an array of arrays with similar lengths);
->  * _width_ - number of columns;
->  * _height_ - number of rows;
->  * _element_ - an element with which the matrix will be filled. By default, this is 0;
->  * _callback_ - function that produces an element of the matrix, taking three arguments:
->    * _i_ - index (zero-based) of the column of generated the element;
->    * _j_ - index (zero-based) of the row of generated the element;
->    * _m_ - the _width_ of generated matrix was passed earlier;
->    * _n_ - the _height_ of generated matrix was passed earlier;
->    * _matrix_ - the matrix with previously generated elements.
+
+Where:
+ * _matrix_ - regular matrix (an array of arrays with similar lengths);
+ * _width_ - number of columns;
+ * _height_ - number of rows;
+ * _element_ - an element with which the matrix will be filled. By default, this is 0;
+ * _callback_ - function that produces an element of the matrix, taking three arguments:
+  * _i_ - index (zero-based) of the column of generated the element;
+  * _j_ - index (zero-based) of the row of generated the element;
+  * _m_ - the _width_ of generated matrix was passed earlier;
+  * _n_ - the _height_ of generated matrix was passed earlier;
+  * _matrix_ - the matrix with previously generated elements.
 
 ##### Example
 
