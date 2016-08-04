@@ -129,7 +129,7 @@ Where:
  * _x_ - index (zero-based) of the column. If it is negative, the coordinate calculated from the end (_width_ + _x_).
  * _y_ - index (zero-based) of the row. If it is negative, the coordinate calculated from the end (_height_ + _y_).
 
-> _m_.getElems(_fromX_, _fromY_[, _toX_ = <width>, _toY_ = <height>])
+> _m_.getElems(_fromX_, _fromY_[, _toX_ = \<width\>, _toY_ = \<height\>])
 
 Where:
  * _fromX_ - index (zero-based) of the column of start element. If it is negative, the coordinate calculated from the end (_width_ + _index_).
@@ -158,11 +158,11 @@ m.getElems(1, 0, 2, 1); // => ['B', 'C', 'D', 'E', 'F']
 Where:
  * _y_ - index (zero-based) of the row. If it is negative, the coordinate calculated from the end (_height_ + _y_).
 
-> _m_.getRows(_fromY_[, _toY_ = _height_])
+> _m_.getRows(_fromY_[, _toY_ = \<height\>])
 
 Where:
- * _fromY_ - index (zero-based) of the start row. If it is negative, the coordinate calculated from the end (_height_ + _index_).
- * _toY_ - index (zero-based) of the row till which extraction will be going. If it is negative, the coordinate calculated from the end (_height_ + _index_).
+ * _fromY_ - index (zero-based) of the start row. If it is negative, the coordinate calculated from the end (_height_ + _fromY_).
+ * _toY_ - index (zero-based) of the row till which extraction will be going. If it is negative, the coordinate calculated from the end (_height_ + _toY_).
 
 **Example**
 
@@ -185,11 +185,11 @@ m.getRows(0, 2); // => [['A', 'B', 'C'], ['D', 'E', 'F']]
 Where:
  * _x_ - index (zero-based) of the column. If it is negative, the coordinate calculated from the end (_width_ + _x_).
 
-> _m_.getColumns(_fromX_[, _toX_ = <width>])
+> _m_.getColumns(_fromX_[, _toX_ = \<width\>])
 
 Where:
- * _fromX_ - index (zero-based) of the start column. If it is negative, the coordinate calculated from the end (_width_ + _index_).
- * _toX_ - index (zero-based) of the column till which extraction will be going. If it is negative, the coordinate calculated from the end (_width_ + _index_).
+ * _fromX_ - index (zero-based) of the start column. If it is negative, the coordinate calculated from the end (_width_ + _fromX_).
+ * _toX_ - index (zero-based) of the column till which extraction will be going. If it is negative, the coordinate calculated from the end (_width_ + _toX_).
 
 **Example**
 
@@ -212,11 +212,11 @@ m.getColumns(1, 3); // => [['B', 'E', 'H'], ['C', 'F', 'I']]
 Where:
  * _index_ - index (zero-based) of the diagonal. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
 
-> _m_.getDiagonalsMaj(_indexFrom_[, _indexTo_ = <diagonals\_ammount>])
+> _m_.getDiagonalsMaj(_fromIndex_[, _toIndex_ = \<diagonals\_ammount\>])
 
 Where:
- * _indexFrom_ - index (zero-based) of the start major diagonal. If it is negative, the value calculated from the end (_diagonals\_amount_ + _index_).
- * _indexTo_ - index (zero-based) of the major diagonal till which extraction will be going. If it is negative, the value calculated from the end (_diagonals\_amount_ + _index_).
+ * _fromIndex_ - index (zero-based) of the start major diagonal. If it is negative, the value calculated from the end (_diagonals\_amount_ + _fromIndex_).
+ * _toIndex_ - index (zero-based) of the major diagonal till which extraction will be going. If it is negative, the value calculated from the end (_diagonals\_amount_ + _toIndex_).
 
 **Example**
 
@@ -239,11 +239,11 @@ m.getDiagonalsMaj(2, 4); // => [['A', 'E', 'I'], ['D', 'H']]
 Where:
  * _index_ - index (zero-based) of the diagonal. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
 
-> _m_.getDiagonalsMin(_indexFrom_[, _indexTo_ = <diagonals\_ammount>])
+> _m_.getDiagonalsMin(_fromIndex_[, _toIndex_ = \<diagonals\_ammount\>])
 
 Where:
- * _indexFrom_ - index (zero-based) of the start minor diagonal. If it is negative, the value calculated from the end (_diagonals\_amount_ + _index_).
- * _indexTo_ - index (zero-based) of the minor diagonal till which extraction will be going. If it is negative, the value calculated from the end (_diagonals\_amount_ + _index_).
+ * _fromIndex_ - index (zero-based) of the start minor diagonal. If it is negative, the value calculated from the end (_diagonals\_amount_ + _fromIndex_).
+ * _toIndex_ - index (zero-based) of the minor diagonal till which extraction will be going. If it is negative, the value calculated from the end (_diagonals\_amount_ + _toIndex_).
 
 **Example**
 
@@ -261,13 +261,13 @@ m.getDiagonalsMin(-3, -1); // => [['B', 'D'], ['C', 'E', 'G']]
 
 **Syntax**
 
-> _m_.getSubmatrix(_fromX_, _fromY_[, _toX_ = <width>, _toY_ = <height>])
+> _m_.getSubmatrix(_fromX_, _fromY_[, _toX_ = \<width\>, _toY_ = \<height\>])
 
 Where:
- * _fromX_ - index (zero-based) of the column of start element. If it is negative, the coordinate calculated from the end (_width_ + _index_).
- * _fromY_ - index (zero-based) of the row of start element. If it is negative, the coordinate calculated from the end (_height_ + _index_).
- * _toX_ - index (zero-based) of the column till which extraction will be going. If it is negative, the coordinate calculated from the end (_width_ + _index_).
- * _toY_ - index (zero-based) of the row till which extraction will be going. If it is negative, the coordinate calculated from the end (_height_ + _index_).
+ * _fromX_ - index (zero-based) of the column of start element. If it is negative, the coordinate calculated from the end (_width_ + _fromX_).
+ * _fromY_ - index (zero-based) of the row of start element. If it is negative, the coordinate calculated from the end (_height_ + _fromY_).
+ * _toX_ - index (zero-based) of the column till which extraction will be going. If it is negative, the coordinate calculated from the end (_width_ + _toX_).
+ * _toY_ - index (zero-based) of the row till which extraction will be going. If it is negative, the coordinate calculated from the end (_height_ + _toY_).
 
 **Example**
 
