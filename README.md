@@ -68,7 +68,7 @@ Methods
 
 #### 1. Creating instance of the Matrix
 
-##### Syntax
+**Syntax**
 
 > new Matrix(_matrix_ | _width_, _height_[, _element_ = 0 | _callback_])
 
@@ -84,7 +84,7 @@ Where:
   * _n_ - the _height_ of generated matrix was passed earlier;
   * _matrix_ - the matrix with previously generated elements.
 
-##### Example
+**Example**
 
 ```javascript
 // Regular matrix
@@ -107,11 +107,11 @@ const m = new Matrix(2, 2, function (i, j, m, n, matrix) {
 
 #### 2. Get Matrix
 
-##### Syntax
+**Syntax**
 
 > _m_.get()
 
-##### Example
+**Example**
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_matrix.svg">
 
@@ -121,7 +121,7 @@ m.get(); // => [['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]
 
 #### 3. Get Element(s)
 
-##### Syntax
+**Syntax**
 
 > _m_.getElem(_x_, _y_)
 
@@ -137,7 +137,7 @@ Where:
  * _toX_ - index (zero-based) of the column of end element. If it is negative, the coordinate calculated from the end (_width_ + _index_).
  * _toY_ - index (zero-based) of the row of end element. If it is negative, the coordinate calculated from the end (_height_ + _index_).
 
-##### Example
+**Example**
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_elem.svg">
 
@@ -151,7 +151,7 @@ m.getElems(1, 0, 2, 1); // => ['B', 'C', 'D', 'E', 'F']
 
 #### 4. Get Row(s)
 
-##### Syntax
+**Syntax**
 
 > _m_.getRow(_y_)
 
@@ -164,7 +164,7 @@ Where:
  * _fromY_ - index (zero-based) of the start row. If it is negative, the coordinate calculated from the end (_height_ + _index_).
  * _toY_ - index (zero-based) of the end row. If it is negative, the coordinate calculated from the end (_height_ + _index_).
 
-##### Example
+**Example**
 
 <img width="250" height="150" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_row.svg">
 
@@ -178,14 +178,20 @@ m.getRows(0, 2); // => [['A', 'B', 'C'], ['D', 'E', 'F']]
 
 #### 5. Get Column(s)
 
-##### Syntax
+**Syntax**
 
 > _m_.getColumn(_x_)
->
-> Where:
->  * _x_ - index (zero-based) of the column. If it is negative, the coordinate calculated from the end (_width_ + _x_).
 
-##### Example
+Where:
+ * _x_ - index (zero-based) of the column. If it is negative, the coordinate calculated from the end (_width_ + _x_).
+
+> _m_.getColumns(_fromX_, _toX_)
+
+Where:
+ * _fromX_ - index (zero-based) of the start column. If it is negative, the coordinate calculated from the end (_width_ + _index_).
+ * _toX_ - index (zero-based) of the end column. If it is negative, the coordinate calculated from the end (_width_ + _index_).
+
+**Example**
 
 <img width="200" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_col.svg">
 
@@ -199,14 +205,20 @@ m.getColumns(1, 3); // => [['B', 'E', 'H'], ['C', 'F', 'I']]
 
 #### 6. Get Major Diagonal(s)
 
-##### Syntax
+**Syntax**
 
 > _m_.getDiagonalMaj(_index_)
->
-> Where:
->  * _index_ - index (zero-based) of the diagonal. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
 
-##### Example
+Where:
+ * _index_ - index (zero-based) of the diagonal. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
+
+> _m_.getDiagonalsMaj([_indexFrom_ = 0, _indexTo_ = _diagonals\_ammount_])
+
+Where:
+ * _indexFrom_ - index (zero-based) of the start major diagonal. If it is negative, the value calculated from the end (_diagonals\_amount_ + _index_). Equal to 0 if it is omitted.
+ * _indexTo_ - index (zero-based) of the end major diagonal. If it is negative, the value calculated from the end (_diagonals\_amount_ + _index_). Equal to a number of diagonals if it is omitted.
+
+**Example**
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_major_diagonal.svg">
 
@@ -220,14 +232,20 @@ m.getDiagonalsMaj(2, 4); // => [['A', 'E', 'I'], ['D', 'H']]
 
 #### 7. Get Minor Diagonal(s)
 
-##### Syntax
+**Syntax**
 
 > _m_.getDiagonalMin(_index_)
->
-> Where:
->  * _index_ - index (zero-based) of the diagonal. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
 
-##### Example
+Where:
+ * _index_ - index (zero-based) of the diagonal. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
+
+> _m_.getDiagonalsMin([_indexFrom_ = 0, _indexTo_ = _diagonals\_ammount_])
+
+Where:
+ * _indexFrom_ - index (zero-based) of the start minor diagonal. If it is negative, the value calculated from the end (_diagonals\_amount_ + _index_). Equal to 0 if it is omitted.
+ * _indexTo_ - index (zero-based) of the end minor diagonal. If it is negative, the value calculated from the end (_diagonals\_amount_ + _index_). Equal to a number of diagonals if it is omitted.
+
+**Example**
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_minor_diagonal.svg">
 
@@ -241,17 +259,17 @@ m.getDiagonalsMin(-3, -1); // => [['B', 'D'], ['C', 'E', 'G']]
 
 #### 8. Get Submatrix
 
-##### Syntax
+**Syntax**
 
 > _m_.getSubmatrix(_fromX_, _fromY_, _toX_, _toY_)
->
-> Where:
->  * _fromX_ - index (zero-based) of the column of start element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
->  * _fromY_ - index (zero-based) of the row of start element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
->  * _toX_ - index (zero-based) of the column of end element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
->  * _toY_ - index (zero-based) of the row of end element. If it is negative, the coordinate calculated from the end (_diagonals\_amount_ + _index_).
 
-##### Example
+Where:
+ * _fromX_ - index (zero-based) of the column of start element. If it is negative, the coordinate calculated from the end (_width_ + _index_).
+ * _fromY_ - index (zero-based) of the row of start element. If it is negative, the coordinate calculated from the end (_height_ + _index_).
+ * _toX_ - index (zero-based) of the column of end element. If it is negative, the coordinate calculated from the end (_width_ + _index_).
+ * _toY_ - index (zero-based) of the row of end element. If it is negative, the coordinate calculated from the end (_height_ + _index_).
+
+**Example**
 
 <img width="220" height="200" src="https://cdn.rawgit.com/ahtohbi4/matrix-slicer/master/img/matrix_get_submatrix.svg">
 
