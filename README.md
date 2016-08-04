@@ -132,10 +132,10 @@ Where:
 > _m_.getElems(_fromX_, _fromY_[, _toX_ = \<width\>, _toY_ = \<height\>])
 
 Where:
- * _fromX_ - index (zero-based) of the column of start element. If it is negative, the coordinate calculated from the end (_width_ + _index_).
- * _fromY_ - index (zero-based) of the row of start element. If it is negative, the coordinate calculated from the end (_height_ + _index_).
- * _toX_ - index (zero-based) of the column till which extraction will be going. If it is negative, the coordinate calculated from the end (_width_ + _index_).
- * _toY_ - index (zero-based) of the row till which extraction will be going. If it is negative, the coordinate calculated from the end (_height_ + _index_).
+ * _fromX_ - index (zero-based) of the column of start element. If it is negative, the coordinate calculated from the end (_width_ + _fromX_).
+ * _fromY_ - index (zero-based) of the row of start element. If it is negative, the coordinate calculated from the end (_height_ + _fromY_).
+ * _toX_ - index (zero-based) of the column till which extraction will be going. If it is negative, the coordinate calculated from the end (_width_ + _toX_).
+ * _toY_ - index (zero-based) of the row till which extraction will be going. If it is negative, the coordinate calculated from the end (_height_ + _toY_).
 
 **Example**
 
