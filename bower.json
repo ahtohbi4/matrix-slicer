@@ -1,0 +1,27 @@
+{
+  "name": "matrix-slicer",
+  "description": "Slices a matrices into columns, rows, diagonals and submatrices.",
+  "main": "index.js",
+  "authors": [
+    "Alexandr Antonov"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "matrix",
+    "column",
+    "row",
+    "diagonal",
+    "element",
+    "submatrix",
+    "slice",
+    "split"
+  ],
+  "homepage": "https://github.com/ahtohbi4/matrix-slicer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
