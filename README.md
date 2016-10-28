@@ -16,14 +16,22 @@ matrix-slicer
 
 1. [Installation](#installation)
 2. [Methods](#methods)
-3. [Test](#Test)
-4. [License](#License)
+3. [Test](#test)
+4. [License](#license)
 
 Installation
 --
 
+#### Npm
+
 ```bash
 $ npm install matrix-slicer --save
+```
+
+#### Bower
+
+```bash
+$ bower install matrix-slicer --save
 ```
 
 Usage
@@ -31,10 +39,11 @@ Usage
 
 #### Javascript
 
-Put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+[Install](#installation) Bower package or jast put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
 ```html
 <script src="/lib/matrix-slicer/index.js"></script>
+<!-- In case of Bower: <script src="/bower_components/matrix-slicer/index.js"></script> -->
 <script>
     var m = new Matrix([
         [1, 2],
@@ -45,7 +54,7 @@ Put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master
 
 #### AMD
 
-Put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+[Install](#installation) Bower package or jast put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
 ```javascript
 require([
@@ -55,14 +64,27 @@ require([
 });
 ```
 
-#### Node.js
+#### CommonJS
 
-Install npm package and use it.
+[Install](#installation) npm package and use it.
 
 ```javascript
 var Matrix = require('matrix-slicer');
 
 var m = new Matrix([
+    [1, 2],
+    [3, 4]
+]);
+```
+
+#### ES6
+
+[Install](#installation) npm package and use it.
+
+```javascript
+import Matrix from 'matrix-slicer';
+
+const m = new Matrix([
     [1, 2],
     [3, 4]
 ]);
