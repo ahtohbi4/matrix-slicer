@@ -60,7 +60,10 @@ Usage
 require([
     'matrix-slicer'
 ], function(Matrix) {
-    // your code here
+    var m = new Matrix([
+        [1, 2],
+        [3, 4]
+    ]);
 });
 ```
 
