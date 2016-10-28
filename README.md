@@ -1,8 +1,10 @@
 matrix-slicer
 ==
 
-[![npm version][version-img]][version] [![devDependency Status][dependency-img]][dependency] [![Travis Build Status][travis-img]][travis] [![Appveyor Build Status][appveyor-img]][appveyor]
+[![Bower version][bower-img]][bower] [![npm version][version-img]][version] [![devDependency Status][dependency-img]][dependency] [![Travis Build Status][travis-img]][travis] [![Appveyor Build Status][appveyor-img]][appveyor]
 
+[bower-img]: https://badge.fury.io/bo/matrix-slicer.svg
+[bower]: https://badge.fury.io/bo/matrix-slicer
 [dependency-img]: https://david-dm.org/ahtohbi4/matrix-slicer/dev-status.svg
 [dependency]: https://david-dm.org/ahtohbi4/matrix-slicer#info=devDependencies
 [version-img]: https://badge.fury.io/js/matrix-slicer.svg
@@ -14,11 +16,24 @@ matrix-slicer
 
 > JavaScript utility for slicing a matrix into elements, columns, rows, diagonals and submatrices.
 
+1. [Installation](#installation)
+2. [Methods](#methods)
+3. [Test](#test)
+4. [License](#license)
+
 Installation
 --
 
+#### Npm
+
 ```bash
 $ npm install matrix-slicer --save
+```
+
+#### Bower
+
+```bash
+$ bower install matrix-slicer --save
 ```
 
 Usage
@@ -26,10 +41,11 @@ Usage
 
 #### Javascript
 
-Put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+[Install](#installation) Bower package or just put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
 ```html
 <script src="/lib/matrix-slicer/index.js"></script>
+<!-- In case of Bower: <script src="/bower_components/matrix-slicer/index.js"></script> -->
 <script>
     var m = new Matrix([
         [1, 2],
@@ -40,24 +56,40 @@ Put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master
 
 #### AMD
 
-Put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+[Install](#installation) Bower package or just put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
 ```javascript
 require([
     'matrix-slicer'
 ], function(Matrix) {
-    // your code here
+    var m = new Matrix([
+        [1, 2],
+        [3, 4]
+    ]);
 });
 ```
 
-#### Node.js
+#### CommonJS
 
-Install npm package and use it.
+[Install](#installation) npm package and use it.
 
 ```javascript
 var Matrix = require('matrix-slicer');
 
 var m = new Matrix([
+    [1, 2],
+    [3, 4]
+]);
+```
+
+#### ES6
+
+[Install](#installation) npm package and use it.
+
+```javascript
+import Matrix from 'matrix-slicer';
+
+const m = new Matrix([
     [1, 2],
     [3, 4]
 ]);
