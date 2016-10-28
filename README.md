@@ -39,7 +39,7 @@ Usage
 
 #### Javascript
 
-[Install](#installation) Bower package or jast put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+[Install](#installation) Bower package or just put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
 ```html
 <script src="/lib/matrix-slicer/index.js"></script>
@@ -54,7 +54,7 @@ Usage
 
 #### AMD
 
-[Install](#installation) Bower package or jast put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
+[Install](#installation) Bower package or just put [the script](https://raw.githubusercontent.com/ahtohbi4/matrix-slicer/master/index.js) in your project.
 
 ```javascript
 require([
