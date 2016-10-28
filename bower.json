@@ -6,6 +6,12 @@
     "Alexandr Antonov"
   ],
   "license": "MIT",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
   "keywords": [
     "matrix",
     "column",
@@ -19,9 +25,13 @@
   "homepage": "https://github.com/ahtohbi4/matrix-slicer",
   "ignore": [
     "**/.*",
-    "node_modules",
+    "*.json",
+    "*.md",
+    "*.yml",
     "bower_components",
+    "img",
+    "LICENSE",
+    "node_modules",
     "test",
-    "tests"
   ]
 }
