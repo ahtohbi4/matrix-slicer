@@ -17,9 +17,10 @@ matrix-slicer
 > JavaScript utility for slicing a matrix into elements, columns, rows, diagonals and submatrices.
 
 1. [Installation](#installation)
-2. [Methods](#methods)
-3. [Test](#test)
-4. [License](#license)
+2. [Usage](#usage)
+3. [Methods](#methods)
+4. [Test](#test)
+5. [License](#license)
 
 Installation
 --
