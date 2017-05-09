@@ -31,7 +31,7 @@ Installation
 $ npm install matrix-slicer --save
 ```
 
-### Yarn
+#### Yarn
 
 ```bash
 $ yarn add matrix-slicer
