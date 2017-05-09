@@ -31,6 +31,12 @@ Installation
 $ npm install matrix-slicer --save
 ```
 
+### Yarn
+
+```bash
+$ yarn add matrix-slicer
+```
+
 #### Bower
 
 ```bash
@@ -50,7 +56,7 @@ Usage
 <script>
     var m = new Matrix([
         [1, 2],
-        [3, 4]
+        [3, 4],
     ]);
 </script>
 ```
@@ -61,11 +67,11 @@ Usage
 
 ```javascript
 require([
-    'matrix-slicer'
-], function(Matrix) {
+    'matrix-slicer',
+], function (Matrix) {
     var m = new Matrix([
         [1, 2],
-        [3, 4]
+        [3, 4],
     ]);
 });
 ```
@@ -79,7 +85,7 @@ var Matrix = require('matrix-slicer');
 
 var m = new Matrix([
     [1, 2],
-    [3, 4]
+    [3, 4],
 ]);
 ```
 
@@ -92,7 +98,7 @@ import Matrix from 'matrix-slicer';
 
 const m = new Matrix([
     [1, 2],
-    [3, 4]
+    [3, 4],
 ]);
 ```
 
@@ -123,7 +129,7 @@ Where:
 // Regular matrix
 const m = new Matrix([
     ['bird', 'dog'],
-    ['cat', 'elephant']
+    ['cat', 'elephant'],
 ]); // => instance of matrix [['bird', 'dog'], ['cat', 'elephant']]
 
 // By dimensions
