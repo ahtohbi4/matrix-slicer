@@ -4,8 +4,8 @@
   "description": "Slices a matrices into columns, rows, diagonals and submatrices.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test",
-    "test:watch": "mocha test --watch"
+    "test": "node_modules/mocha/bin/mocha ./test",
+    "test:watch": "node_modules/mocha/bin/mocha ./test --watch"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
   "homepage": "https://github.com/ahtohbi4/matrix-slicer#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^3.0.0",
+    "mocha": "^4.0.1",
     "mocha-eslint": "^4.1.0"
   }
 }
