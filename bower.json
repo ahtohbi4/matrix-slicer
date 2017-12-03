@@ -22,7 +22,7 @@
     "slice",
     "split"
   ],
-  "homepage": "https://github.com/ahtohbi4/matrix-slicer",
+  "homepage": "https://ahtohbi4.github.io/matrix-slicer/",
   "ignore": [
     "**/.*",
     "*.json",

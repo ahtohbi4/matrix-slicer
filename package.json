@@ -31,7 +31,7 @@
     "index.js",
     "README.md"
   ],
-  "homepage": "https://github.com/ahtohbi4/matrix-slicer#readme",
+  "homepage": "https://ahtohbi4.github.io/matrix-slicer/",
   "devDependencies": {
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
