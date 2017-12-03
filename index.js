@@ -141,13 +141,9 @@
          * @returns {<matrix item>}
          */
         getElem(x, y) {
-            let result;
-
-            if (x < this.size.width && y < this.size.height) {
-                result = this.matrix[y][x];
+            if (this.matrix[y] && this.matrix[y][x]) {
+                return this.matrix[y][x];
             }
-
-            return result;
         }
 
         /**
