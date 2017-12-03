@@ -1,6 +1,6 @@
-(() => {
-    'use strict';
+'use strict';
 
+(function () {
     function PropertyError(property) {
         this.name = 'PropertyError';
 
