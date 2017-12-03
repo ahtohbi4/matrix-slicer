@@ -97,13 +97,15 @@
          * @privet
          */
         _normalize(value, valueMax) {
-            let result = 0;
-
-            if (typeof value === 'number') {
-                result = (value >= 0) ? value : (valueMax + value);
+            if (typeof value !== 'number') {
+                return 0;
             }
-
-            return result;
+            
+            if (value < 0) {
+                return (valueMax + value);
+            }
+            
+            return value;
         }
 
         /**
@@ -215,9 +217,7 @@
             let result;
 
             if (typeof this.matrix[0][number] !== 'undefined') {
-                result = this.matrix.map((row) => {
-                    return row[number];
-                });
+                result = this.matrix.map((row) => row[number]);
             }
 
             return result;
@@ -373,7 +373,7 @@
 
     if (typeof define === 'function') {
         // Define Matrix for AMD loaders
-        define(function() {
+        define(function () {
             return Matrix;
         });
 
