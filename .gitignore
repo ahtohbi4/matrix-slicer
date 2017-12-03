@@ -7,4 +7,5 @@ npm-debug.log*
 node_modules
 
 # Project directory for IDE
+.idea
 .project
