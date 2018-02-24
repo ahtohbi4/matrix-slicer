@@ -1,6 +1,6 @@
 {
   "name": "matrix-slicer",
-  "version": "2.7.2",
+  "version": "2.8.0",
   "description": "Slices a matrices into columns, rows, diagonals and submatrices.",
   "main": "index.js",
   "scripts": {
