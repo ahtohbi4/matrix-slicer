@@ -112,17 +112,19 @@ export default class Matrix {
         const {
             direction,
 
-            startX: startUX = 0,
-            startY: startUY = 0,
-            endX: endUX = this.maxX,
-            endY: endUY = this.maxY,
+            startX: startUX,
+            startY: startUY,
+            endX: endUX,
+            endY: endUY,
         } = options;
-        const startX = this.normalizeX(startUX);
-        const startY = this.normalizeY(startUY);
-        const endX = this.normalizeX(endUX);
-        const endY = this.normalizeY(endUY);
-
         const collection = flattenArray(Matrix.groupByCollectionType(this.parsed, direction));
+        const { column: startXDefault, row: startYDefault } = collection[0];
+        const { column: endXDefault, row: endYDefault } = collection[collection.length - 1];
+        const startX = (startUX !== undefined) ? this.normalizeX(startUX) : startXDefault;
+        const startY = (startUY !== undefined) ? this.normalizeY(startUY) : startYDefault;
+        const endX = (endUX !== undefined) ? this.normalizeX(endUX) : endXDefault;
+        const endY = (endUY !== undefined) ? this.normalizeY(endUY) : endYDefault;
+
         const { indexEnd, indexStart } = collection.reduce((result, { column, row }, index) => {
             if (column === startX && row === startY) {
                 return {
@@ -143,15 +145,17 @@ export default class Matrix {
 
         if (indexStart < indexEnd) {
             return Matrix.toValues(
-                collection.slice(indexStart, indexEnd)
+                collection.slice(indexStart, indexEnd + 1)
             );
         }
-        const formatter = (indexStart < indexEnd) ? Array.prototype.reduce : Array.prototype.reduceRight;
+
+        const revertedIndexStart = ((collection.length - 1) - indexStart);
+        const revertedIndexEnd = ((collection.length - 1) - indexEnd + 1);
 
         return Matrix.toValues(
-            formatter.call(collection, (result, item, index) => {
-
-            }, [])
+            collection
+                .reduceRight((result, item) => ([ ...result, item ]), [])
+                .slice(revertedIndexStart, revertedIndexEnd)
         );
     }
 

@@ -104,7 +104,7 @@ describe('Class Matrix from src/Matrix.js', () => {
         );
         assert.sameDeepOrderedMembers(
             m.getElements({ startX: 2, startY: 2, endX: 1, direction: Matrix.COLLECTION_TYPE_COLUMN }),
-            ['c3', 'b3', 'a3', 'c2', 'b2', 'a2'],
+            ['c3', 'b3', 'a3', 'c2'],
             'Failure with option { startX: 2, startY: 2, endX: 1, direction: Matrix.COLLECTION_TYPE_COLUMN }.'
         );
 
