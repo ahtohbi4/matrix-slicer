@@ -43,5 +43,5 @@ describe('Utils from src/utils.js', () => {
             normalizeCoordinate(-6, 4, { isStrict: true }),
             undefined
         );
-    })
+    });
 });
