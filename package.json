@@ -4,7 +4,7 @@
   "description": "Slices a matrices into columns, rows, diagonals and submatrices.",
   "main": "src/index.js",
   "scripts": {
-    "coveralls": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "coveralls": "node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --require @babel/register -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "./node_modules/.bin/eslint ./",
     "test": "mocha ./test --require @babel/register",
     "test:watch": "yarn test --watch"
@@ -55,7 +55,7 @@
     "coveralls": "^3.0.0",
     "eslint": "^5.12.0",
     "husky": "^1.3.1",
-    "istanbul": "^0.4.5",
+    "istanbul": "^1.1.0-alpha.1",
     "lint-staged": "^8.1.0",
     "mocha": "^5.0.1"
   },
