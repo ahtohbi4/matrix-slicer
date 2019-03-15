@@ -142,4 +142,40 @@ describe('Class Matrix from src/Matrix.js', () => {
             'b3'
         );
     });
+
+    it('Method getSubMatrix() returns the requested matrix', () => {
+        assert.sameDeepOrderedMembers(
+            m.getSubMatrix({ from: [1, 1], to: [2, 2] }),
+            [
+                ['b2', 'b3'],
+                ['c2', 'c3'],
+            ],
+            'With parameters { from: [1, 1], to: [2, 2] }'
+        );
+        assert.sameDeepOrderedMembers(
+            m.getSubMatrix({ from: [-2, -1], to: [1, 1] }),
+            [
+                ['a1', 'a2', 'a3', 'a4'],
+                ['b1', 'b2', 'b3', 'b4'],
+                ['c1', 'c2', 'c3', 'c4'],
+
+                ['c3', 'c2'],
+                ['b3', 'b2'],
+            ],
+            'With parameters { from: [-2, -1], to: [1, 1] }'
+        );
+        assert.sameDeepOrderedMembers(
+            m.getSubMatrix({ adjoinedTo: [1, 1] }),
+            [
+                ['b2', 'c2'],
+                ['b3', 'c3'],
+            ]
+        );
+        assert.sameDeepOrderedMembers(
+            m.getSubMatrix({ adjoinedTo: [1, 1], distances: [1, 0] }),
+            [
+                ['b1', 'b2', 'b3'],
+            ]
+        );
+    });
 });

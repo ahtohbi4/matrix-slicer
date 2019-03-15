@@ -178,4 +178,55 @@ export default class Matrix {
     getRow(index) {
         return this.getRows()[index];
     }
+
+    getSubMatrix(params) {
+        const {
+            from,
+            to,
+
+            adjoinedTo,
+            distances,
+        } = params;
+
+        if (Array.isArray(from) || Array.isArray(to)) {
+            const [
+                startUX = 0,
+                startUY = 0,
+            ] = from;
+            const [
+                endUX = this.maxX,
+                endUY = this.maxY,
+            ] = to;
+            const startX = this.normalizeX(startUX);
+            const startY = this.normalizeY(startUY);
+            const endX = this.normalizeX(endUX);
+            const endY = this.normalizeY(endUY);
+            const isReversed = (startX > endX || (startX === endX && startY > endY));
+            const formatter = isReversed ? Array.prototype.reduceRight : Array.prototype.reduce;
+            const collection = formatter.call(this.parsed, (result, cell) => {
+                const { column, row } = cell;
+                const minX = Math.min(startX, endX);
+                const minY = Math.min(startY, endY);
+                const maxX = Math.max(startX, endX);
+                const maxY = Math.max(startY, endY);
+
+                if (column >= minX && column <= maxX && row >= minY && row <= maxY) {
+                    const index = (row - minY);
+
+                    result[index] = [
+                        ...(result[index] || []),
+                        cell,
+                    ];
+
+                    return result;
+                }
+
+                return result;
+            }, []);
+
+            return Matrix.toValues(collection);
+        }
+
+        return [];
+    }
 }
